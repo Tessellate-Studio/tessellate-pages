@@ -27,7 +27,7 @@
 </head>
 <body>
     <h1>Privacy Policy</h1>
-    <p class="date">Effective date: May 17, 2026 | Version 3.2</p>
+    <p class="date">Effective date: July 3, 2026 | Version 3.3</p>
 
     <p>Alate ("we", "our", "the app") is a mobile application developed by <strong>Bits of Tessellate</strong> that helps you predict whether clothing items will fit based on your body profile. This policy explains what data we collect, how we use it, and your rights.</p>
 
@@ -59,6 +59,15 @@
     <p>If you paste a URL from a brand we don't yet support, the URL and brand domain are recorded in our backend so we can prioritise which storefronts to onboard next. We do <strong>not</strong> contact the brand on your behalf, and your body profile is never associated with the request.</p>
     <p>Optionally, you may opt in to be notified by email when we add support for that brand. If you provide an email, it is stored alongside the brand entry for the sole purpose of sending that single notification — never used for marketing, newsletters, or any other communication. Providing this email is optional; the rest of the app works without it.</p>
 
+    <h3>h) Shared Measurement Snapshots (optional, server-side)</h3>
+    <p>If you choose to share your measurements, the specific values you select are stored anonymously on our servers — with <strong>no name, account, or device identifier attached</strong> — behind a random link. You pick how long the link lives (from 1 week to 3 months); the snapshot is automatically deleted once it expires. Sharing is entirely optional, and only the fields you tick are included.</p>
+
+    <h3>i) Measurement Sheet Scanning (optional, not stored)</h3>
+    <p>If you choose to scan a tailor's measurement sheet, the photo is sent <strong>once</strong> to our AI provider (Anthropic) solely to read the numbers on it. Under our agreement, that image is <strong>not used to train any AI model</strong>, and we do <strong>not</strong> store the photo. Only the values you review and approve are saved, and they stay on your device.</p>
+
+    <h3>j) Restock Alerts (optional, email waitlist)</h3>
+    <p>If your recommended size is sold out, you may ask to be emailed when it returns. If you opt in, we store your email address, the product URL, and the size — solely to send that back-in-stock notification. Stock is re-checked against the live store; we never store the merchant's inventory. The email is never used for marketing, and you can unsubscribe from any alert email.</p>
+
     <h2>2. Age Requirement</h2>
     <p>Alate is intended for users aged <strong>16 or older</strong>. On first launch, the app asks you to confirm your age. If you indicate you're under 16, the app will not collect body profile data from you. Users under 16 who circumvent the age gate by providing inaccurate information are not our intended audience; we will promptly delete any data we discover was collected from someone under 16.</p>
 
@@ -78,11 +87,12 @@
     <ul>
         <li><strong>Vercel</strong> — hosts our backend API that processes scrape and fit-check requests. Your body profile is sent here transiently to compute a fit check and is immediately discarded; it is not stored. See section 1a. <a href="https://vercel.com/legal/privacy-policy">Privacy Policy</a></li>
         <li><strong>Supabase</strong> — hosts the brand opt-out registry, the brand-request demand log, and (optional) authentication. Body profile is NOT synced to Supabase. <a href="https://supabase.com/privacy">Privacy Policy</a></li>
-        <li><strong>Anthropic (Claude)</strong> — used server-side to enrich scraped product descriptions when the source site lacks structured data. Only public product text is sent, never body profile. <a href="https://www.anthropic.com/privacy">Privacy Policy</a></li>
+        <li><strong>Anthropic (Claude)</strong> — used server-side to (a) enrich scraped product descriptions when the source site lacks structured data (only public product text is sent, never body profile), and (b) read a measurement-sheet photo once if you use that feature (see section 1i). Under our agreement, neither use trains any AI model, and the sheet photo is not stored. <a href="https://www.anthropic.com/privacy">Privacy Policy</a></li>
         <li><strong>Google Gemini</strong> — used server-side as a fallback enrichment model under the same restrictions. <a href="https://policies.google.com/privacy">Privacy Policy</a></li>
         <li><strong>Google Sign-In via Supabase Auth</strong> (optional) — authentication only, if you choose to sign in. <a href="https://policies.google.com/privacy">Privacy Policy</a></li>
         <li><strong>Sentry</strong> — crash reporting, PII-scrubbed. <a href="https://sentry.io/privacy/">Privacy Policy</a></li>
         <li><strong>Firebase Crashlytics</strong> — native crash reporting, PII-scrubbed. <a href="https://firebase.google.com/support/privacy">Privacy Policy</a></li>
+        <li><strong>Resend</strong> — sends transactional email only (the single restock-alert notification you opt into, section 1j). It receives just the email address needed to deliver that message. <a href="https://resend.com/legal/privacy-policy">Privacy Policy</a></li>
     </ul>
     <p>No personal data is sold to any party. We have not sold personal information in the preceding 12 months.</p>
 
@@ -102,6 +112,9 @@
         <li><strong>Brand opt-out entries</strong> are retained indefinitely so the opt-out persists across deployments.</li>
         <li><strong>Brand request entries</strong> (URL + brand domain) are retained indefinitely as anonymised demand signal. Optional notify-me email addresses are deleted within 30 days of the notification being sent, or upon your request — whichever is sooner.</li>
         <li><strong>Product URLs from successful scrapes</strong> are never retained.</li>
+        <li><strong>Shared measurement snapshots</strong> are deleted automatically when the link you chose expires (1 week to 3 months), and can be revoked earlier on request.</li>
+        <li><strong>Measurement-sheet photos</strong> are never stored — the image is read once and discarded.</li>
+        <li><strong>Restock-alert entries</strong> (email, product URL, size) are deleted once the notification is sent or you unsubscribe, whichever is sooner.</li>
     </ul>
 
     <h2>7. Your Rights</h2>

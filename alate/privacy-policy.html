@@ -57,7 +57,7 @@
 
   <h3>g) Brand Request Data (server-side)</h3>
   <p>If you paste a URL from a brand we don't yet support, the URL and brand domain are recorded in our backend so we can prioritise which storefronts to onboard next. We do <strong>not</strong> contact the brand on your behalf, and your body profile is never associated with the request.</p>
-  <p>Optionally, you may opt in to be notified by email when we add support for that brand. If you provide an email, it is stored alongside the brand entry for the sole purpose of sending that single notification — never used for marketing, newsletters, or any other communication. We keep it until that notification is sent, then remove it within 30 days (section 6). If you are signed in when you make a request that does not include an email, we do not keep your account id with it. Providing this email is optional; the rest of the app works without it.</p>
+  <p>Optionally, you may opt in to be notified by email when we add support for that brand. If you provide an email, it is stored alongside the brand entry for the sole purpose of sending that single notification — never used for marketing, newsletters, or any other communication. We keep it until that notification is sent, then remove it within 30 days (section 6). We do not store your account id with brand requests. Providing this email is optional; the rest of the app works without it.</p>
 
   <h3>h) Shared Measurement Snapshots (optional, server-side)</h3>
   <p>If you choose to share your measurements, the specific values you select are stored anonymously on our servers — with <strong>no name, account, or device identifier attached</strong> — behind a random link. You pick how long the link lives (from 1 week to 3 months); the snapshot is automatically deleted once it expires. Sharing is entirely optional, and only the fields you tick are included.</p>
@@ -67,7 +67,7 @@
 
   <h3>j) Restock Alerts (optional, email waitlist)</h3>
   <p>If your recommended size is sold out, you may ask to be emailed when it returns. If you opt in, we store your email address, the product URL, and the size — solely to send that back-in-stock notification. Stock is re-checked against the live store; we never store the merchant's inventory. The email is never used for marketing, and you can unsubscribe from any alert email.</p>
-  <p>The product URL is kept for three reasons and no others: it is the page we re-check to see whether your size has come back, it is the link in the email that takes you to the store, and it is what opens the product page when you tap the push notification. Once the notification is sent, you unsubscribe, or the alert expires, we remove your email address and any account or device identifier from the alert, usually within six hours. The brand, product link and size remain only as an anonymous count of demand for that size, which cannot be traced back to you.</p>
+  <p>The product URL is kept for three reasons and no others: it is the page we re-check to see whether your size has come back, it is the link in the email that takes you to the store, and it is what opens the product page when you tap the push notification. Once the notification is sent, you unsubscribe, or the alert expires, we remove your email address and any account or device identifier from the alert at that moment. The brand, product link and size remain only as an anonymous count of demand for that size, which cannot be traced back to you.</p>
 
   <h3>k) Push Notification Token (optional)</h3>
   <p>If you allow notifications, your device is issued a push token by Expo’s push service, and we store it so a restock alert can reach you on the device that asked for it. The row holds the token, the random device identifier from section 2(d), your account id if you are signed in, and whether the device is iOS or Android — nothing else. It is used only to deliver alerts you asked for, never for marketing, and it is revoked when you turn notifications off. Email remains the guaranteed channel; push is an addition to it, not a replacement.</p>
@@ -117,11 +117,11 @@
     <li><strong>Crash reports</strong> are retained for 90 days.</li>
     <li><strong>Rate-limit counters</strong> reset every minute and are not persisted.</li>
     <li><strong>Brand opt-out entries</strong> are retained indefinitely so the opt-out persists across deployments.</li>
-    <li><strong>Brand request entries</strong> (URL + brand domain) are retained indefinitely as anonymised demand signal. Optional notify-me email addresses, and any account id stored with them, are deleted within 30 days of the notification being sent, or upon your request — whichever is sooner. Until the notification is sent, the email is kept so that we can send it.</li>
+    <li><strong>Brand request entries</strong> (URL + brand domain) are retained indefinitely as anonymised demand signal. Optional notify-me email addresses are deleted within 30 days of the notification being sent, or upon your request — whichever is sooner. Until the notification is sent, the email is kept so that we can send it.</li>
     <li><strong>Product URLs from successful reads</strong> are never retained.</li>
     <li><strong>Shared measurement snapshots</strong> are deleted automatically when the link you chose expires (1 week to 3 months), and can be revoked earlier on request.</li>
     <li><strong>Measurement-sheet photos</strong> are never stored — the image is read once and discarded.</li>
-    <li><strong>Restock-alert entries</strong> — your email address and any account or device identifier are removed once the notification is sent, you unsubscribe, or the alert expires, usually within six hours. The brand, product URL and size are kept afterwards only as anonymous demand data.</li>
+    <li><strong>Restock-alert entries</strong> — your email address and any account or device identifier are removed as soon as the notification is sent, you unsubscribe, or the alert expires. The brand, product URL and size are kept afterwards only as anonymous demand data.</li>
     <li><strong>Push notification tokens</strong> are kept while notifications are enabled and revoked when you turn them off or uninstall the app.</li>
   </ul>
 

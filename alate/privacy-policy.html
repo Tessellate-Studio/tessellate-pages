@@ -23,18 +23,19 @@
 
 <main class="doc">
   <h1>Privacy Policy</h1>
-  <p class="date">Version 2 · Effective September 9, 2026</p>
+  <p class="date">Version 3 · Effective September 11, 2026</p>
 
   <p>Alate ("we", "our", "the app") is a mobile application developed by <strong>Tessellate Studio</strong> that helps you predict whether clothing items will fit based on your body profile. This policy explains what data we collect, how we use it, and your rights.</p>
 
   <div class="callout dark">
-    <p><strong>TL;DR</strong>Your body profile lives on your device. When you run a fit check it is sent to our own server to compute the result, then immediately discarded — never shared with anyone, never sent to an AI service. If you choose to sign in, a copy of your profile and fit history is kept in your account so your other devices can pull it, and is deleted when you delete the account. Product URLs you paste are read in real time and discarded. We don't sell data, don't run ads, don't track you across apps.</p>
+    <p><strong>TL;DR</strong>Your body profile lives on your device. When you run a fit check it is sent to our own server to compute the result, then immediately discarded — never shared with anyone, and your stored profile is never sent to an AI service. The one exception is a feature you have to go and use: if you scan a tailor's measurement sheet, that photo goes once to our AI provider to read the numbers off it, and is not stored (section 1i). If you choose to sign in, a copy of your profile and fit history is kept in your account so your other devices can pull it, and is deleted when you delete the account. Product URLs you paste are read in real time and discarded. We don't sell data, don't run ads, don't track you across apps.</p>
   </div>
 
   <h2>1. Data We Collect</h2>
 
   <h3>a) Body Profile Data</h3>
   <p>When you build your profile, you provide height and six body proportions: shoulder, chest, waist, hip, thigh type, torso length — and, optionally, exact measurements in cm or inches. This data is stored on your device via AsyncStorage. When you run a fit check, your body profile is sent to our own backend so our fit algorithm can compute the prediction. It is used in memory for that single request and then discarded — it is <strong>not logged, not used to build any profile of you, and never sent to any third party or AI service</strong>. If you sign in (optional), a copy of your profile is also stored in your account so it can be restored on your other devices — see section 1e.</p>
+  <p>One clarification, because the sentence above is absolute and one optional feature sits outside it: the profile <em>we hold</em> is never sent to an AI service. If you choose to scan a tailor's measurement sheet, you are handing us a photo of measurements you wrote down yourself, and that image is read once by our AI provider — see section 1i for exactly what happens to it. Your stored profile is not part of that request.</p>
 
   <h3>b) Product URLs (ephemeral)</h3>
   <p>When you paste or share a product URL, we send that URL to our backend to read publicly available product information (name, price, image, description, material, sizes) from the source website. The URL is processed in real time and discarded. We do not persist URLs with your identity on our servers. The fit check result is stored locally on your device as part of your fit history.</p>

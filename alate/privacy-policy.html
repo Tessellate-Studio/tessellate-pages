@@ -23,12 +23,12 @@
 
 <main class="doc">
   <h1>Privacy Policy</h1>
-  <p class="date">Version 2 · Effective September 9, 2026</p>
+  <p class="date">Version 3 · Effective September 12, 2026</p>
 
   <p>Alate ("we", "our", "the app") is a mobile application developed by <strong>Tessellate Studio</strong> that helps you predict whether clothing items will fit based on your body profile. This policy explains what data we collect, how we use it, and your rights.</p>
 
   <div class="callout dark">
-    <p><strong>TL;DR</strong>Your body profile lives on your device. When you run a fit check it is sent to our own server to compute the result, then immediately discarded — never shared with anyone, never sent to an AI service. If you choose to sign in, a copy of your profile and fit history is kept in your account so your other devices can pull it, and is deleted when you delete the account. Product URLs you paste are read in real time and discarded. We don't sell data, don't run ads, don't track you across apps.</p>
+    <p><strong>TL;DR</strong>Your body profile lives on your device. When you run a fit check it is sent to our own server to compute the result, then immediately discarded — never shared with anyone, never sent to an AI service. If you choose to sign in, a copy of your profile and fit history is kept in your account so your other devices can pull it, and is deleted when you delete the account. Product URLs you paste are read in real time and discarded — unless a store is too slow to read while you wait, when we hold that one link just long enough to finish the job and hand the result to your app (six hours at the very most). We don't sell data, don't run ads, don't track you across apps.</p>
   </div>
 
   <h2>1. Data We Collect</h2>
@@ -36,8 +36,8 @@
   <h3>a) Body Profile Data</h3>
   <p>When you build your profile, you provide height and six body proportions: shoulder, chest, waist, hip, thigh type, torso length — and, optionally, exact measurements in cm or inches. This data is stored on your device via AsyncStorage. When you run a fit check, your body profile is sent to our own backend so our fit algorithm can compute the prediction. It is used in memory for that single request and then discarded — it is <strong>not logged, not used to build any profile of you, and never sent to any third party or AI service</strong>. If you sign in (optional), a copy of your profile is also stored in your account so it can be restored on your other devices — see section 1e.</p>
 
-  <h3>b) Product URLs (ephemeral)</h3>
-  <p>When you paste or share a product URL, we send that URL to our backend to read publicly available product information (name, price, image, description, material, sizes) from the source website. The URL is processed in real time and discarded. We do not persist URLs with your identity on our servers. The fit check result is stored locally on your device as part of your fit history.</p>
+  <h3>b) Product URLs (ephemeral, with one short-lived exception)</h3>
+  <p>When you paste or share a product URL, we send that URL to our backend to read publicly available product information (name, price, image, description, material, sizes) from the source website. The URL is processed in real time and discarded, and we do not persist URLs with your name, email or account. <strong>One exception:</strong> some stores are too slow to read while you wait. When that happens we save that link, together with your device's random app identifier, so we can keep trying in the background and hand the result to your app the next time it asks. That entry is deleted the moment your app confirms it has the result, within 15 minutes of delivery if it never confirms, and in every case within six hours. It is used for nothing else. The fit check result is stored locally on your device as part of your fit history.</p>
 
   <h3>c) Fit Check History</h3>
   <p>Results of your fit checks (product name, image URL, fit score, warnings, recommended size, timestamps) are stored locally on your device. If you sign in, your most recent fit checks (up to 50) are also stored in your account for cross-device sync — see section 1e.</p>
@@ -118,7 +118,7 @@
     <li><strong>Rate-limit counters</strong> reset every minute and are not persisted.</li>
     <li><strong>Brand opt-out entries</strong> are retained indefinitely so the opt-out persists across deployments.</li>
     <li><strong>Brand request entries</strong> (URL + brand domain) are retained indefinitely as anonymised demand signal. Optional notify-me email addresses are deleted within 30 days of the notification being sent, or upon your request — whichever is sooner. Until the notification is sent, the email is kept so that we can send it.</li>
-    <li><strong>Product URLs from successful reads</strong> are never retained.</li>
+    <li><strong>Product URLs from successful reads</strong> are never retained. The one exception is a store too slow to read while you wait: that link is kept — with your device's random app identifier, never your name, email or account — until your app collects the result. It is deleted on confirmation, within 15 minutes of delivery if your app never confirms, and never kept beyond six hours.</li>
     <li><strong>Shared measurement snapshots</strong> are deleted automatically when the link you chose expires (1 week to 3 months), and can be revoked earlier on request.</li>
     <li><strong>Measurement-sheet photos</strong> are never stored — the image is read once and discarded.</li>
     <li><strong>Restock-alert entries</strong> — your email address and any account or device identifier are removed as soon as the notification is sent, you unsubscribe, or the alert expires. The brand, product URL and size are kept afterwards only as anonymous demand data.</li>
@@ -171,7 +171,7 @@
   <h2>13. App Store Privacy Details</h2>
   <p><strong>Tracking:</strong> Alate does not track you across other companies' apps or websites. We do not use the IDFA or any device advertising identifier.</p>
   <p><strong>Data linked to you:</strong> Email address and name (only if you sign in via Google). Body profile, measurements, budget range, calibration garments and fit history (only if you sign in — synced to your account). Brand-request notify email (only if you opt in to "notify me when added"; held for up to 30 days after the notification is sent). Restock alerts (your email, the product URL and the size, until the notification is sent, you unsubscribe, or the alert expires — after which only an anonymous record of the brand, URL and size remains). Our per-install identifiers — the rate-limiting id, the crash-grouping id, and the push token — are treated as linked to you, because when you are signed in the push-token record holds your account id in the same row. Crash reports are treated as linked for the same reason, even though they carry no name, email or account details themselves.</p>
-  <p><strong>Data not linked to you:</strong> Body profile and fit history when you are not signed in (stored on your device; the profile is sent to our backend transiently for each fit check and discarded), product URLs from successful reads (ephemeral), unsupported-brand URL + brand domain (anonymised demand signal when no notify email is provided), and the anonymised unsupported-brand demand signal.</p>
+  <p><strong>Data not linked to you:</strong> Body profile and fit history when you are not signed in (stored on your device; the profile is sent to our backend transiently for each fit check and discarded), product URLs from successful reads (ephemeral), the link to a store too slow to read while you wait plus a random app identifier (at most six hours, see section 1b), unsupported-brand URL + brand domain (anonymised demand signal when no notify email is provided), and the anonymised unsupported-brand demand signal.</p>
   <p><strong>Data used to track you:</strong> None.</p>
 
   <h2>14. Changes to This Policy</h2>

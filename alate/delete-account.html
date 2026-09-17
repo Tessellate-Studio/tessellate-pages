@@ -34,7 +34,7 @@
     <li><strong>Age-gate confirmation</strong> — on your device only.</li>
     <li><strong>Device identifier</strong> (random UUID for rate-limiting) — on your device; the server sees it but doesn't link it to you.</li>
     <li><strong>Google account info</strong> (email + name, only if you signed in) — stored via Supabase Auth server-side.</li>
-    <li><strong>Brand-request notify email</strong> (only if you opted in to "notify me when added" on an unsupported-brand fit check) — stored server-side until the notification is sent, then deleted within 30 days.</li>
+    <li><strong>Brand-request notify email</strong> (only if you opted in to "notify me when added" on an unsupported-brand fit check) — stored server-side until the notification is sent, then deleted within 30 days — or deleted 90 days after you asked, if we haven't been able to send it.</li>
     <li><strong>Restock-alert entries</strong> (email, product URL, size — only if you asked for one) — deleted once the email is sent, or the moment you unsubscribe from it.</li>
     <li><strong>Shared measurement snapshots</strong> (only if you shared a link) — deleted when the link expires, or earlier on request.</li>
   </ul>

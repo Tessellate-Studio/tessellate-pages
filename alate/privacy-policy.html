@@ -23,7 +23,7 @@
 
 <main class="doc">
   <h1>Privacy Policy</h1>
-  <p class="date">Version 5 · Effective September 17, 2026</p>
+  <p class="date">Version 6 · Effective September 18, 2026</p>
 
   <p>Alate ("we", "our", "the app") is a mobile application developed by <strong>Tessellate Studio</strong> that helps you predict whether clothing items will fit based on your body profile. This policy explains what data we collect, how we use it, and your rights.</p>
 
@@ -44,8 +44,8 @@
   <p>Results of your fit checks (product name, image URL, fit score, warnings, recommended size, timestamps) are stored locally on your device. If you sign in, your most recent fit checks (up to 50) are also stored in your account for cross-device sync — see section 1e.</p>
 
   <h3>d) Device Identifier</h3>
-  <p>On first launch, the app generates a random UUID stored locally and includes it as an <code>X-Device-Id</code> header on backend requests. This identifier is used solely for rate-limiting (to prevent abuse) and is not linked to your identity, name, email, or body profile. It is regenerated if you reinstall the app.</p>
-  <p>Our crash-reporting tools generate a <strong>second, separate</strong> per-install identifier of their own, described in section 2(f). Neither identifier is tied to your name, email or account, and neither is an advertising ID.</p>
+  <p>On first launch, the app generates a random UUID stored locally and includes it as an <code>X-Device-Id</code> header on backend requests. It is not an advertising ID and is never tied to your body profile. It is used for rate-limiting (to prevent abuse) and to route things you asked for back to this install: a slow store read finishing in the background (section 1b), a restock alert and its push notification (sections 1j and 1k), and — in a scrambled, per-product form — a size-range tap (section 1l). On its own it carries no name, email or account, but where you give us those for a feature it is stored in the same record: a restock alert keeps it next to your email, and the push-token record keeps it next to your account id if you are signed in. That is why section 13 treats it as linked to you. It is regenerated if you reinstall the app.</p>
+  <p>Our crash-reporting tools generate a <strong>second, separate</strong> per-install identifier of their own, described in section 1f. That one is never stored with your name, email or account, and neither identifier is an advertising ID.</p>
 
   <h3>e) Google Account and Cloud Sync (optional)</h3>
   <p>If you choose to sign in with Google on the Account screen, we receive your email address and profile name via Supabase Auth. <strong>Sign-in is optional.</strong> Your body profile, fit history, and calibration work fully without an account.</p>
@@ -71,7 +71,10 @@
   <p>The product URL is kept for three reasons and no others: it is the page we re-check to see whether your size has come back, it is the link in the email that takes you to the store, and it is what opens the product page when you tap the push notification. Once the notification is sent, you unsubscribe, or the alert expires, we remove your email address and any account or device identifier from the alert at that moment. The brand, product link and size remain only as an anonymous count of demand for that size, which cannot be traced back to you.</p>
 
   <h3>k) Push Notification Token (optional)</h3>
-  <p>If you allow notifications, your device is issued a push token by Expo’s push service, and we store it so a restock alert can reach you on the device that asked for it. The row holds the token, the random device identifier from section 2(d), your account id if you are signed in, and whether the device is iOS or Android — nothing else. It is used only to deliver alerts you asked for, never for marketing, and it is revoked when you turn notifications off. Email remains the guaranteed channel; push is an addition to it, not a replacement.</p>
+  <p>If you allow notifications, your device is issued a push token by Expo’s push service, and we store it so a restock alert can reach you on the device that asked for it. The row holds the token, the random device identifier from section 1d, your account id if you are signed in, and whether the device is iOS or Android — nothing else. It is used only to deliver alerts you asked for, never for marketing, and it is revoked when you turn notifications off. Email remains the guaranteed channel; push is an addition to it, not a replacement.</p>
+
+  <h3>l) Size-Range Interest (optional)</h3>
+  <p>When a brand doesn't make a size that fits you and we can tell which end of its range you fall off, the fit result offers a tap to show the brand you'd buy a bigger (or smaller) size. If you tap it, we record only the store, the product, and whether you wanted bigger or smaller — <strong>no size, no measurement, no name, email or account</strong>. To count each person once, we also store a one-way scrambled code made from your random app identifier (section 1d) together with that store and product. The code can't be turned back into the identifier, and taps on two different products produce unrelated codes, so they can't be linked into a history. The brand sees only a count, through Alate for Brands, our tool for stores. Entries are deleted after 90 days.</p>
 
   <h2>2. Age Requirement</h2>
   <p>Alate is intended for users aged <strong>16 or older</strong>. On first launch, the app asks you to confirm your age. If you indicate you're under 16, the app will not collect body profile data from you. Users under 16 who circumvent the age gate by providing inaccurate information are not our intended audience; we will promptly delete any data we discover was collected from someone under 16.</p>
@@ -91,7 +94,7 @@
   <p>We use the following service providers strictly to operate the app. Your body profile is processed by our own backend (hosted on Vercel) transiently to compute a fit check, and — only if you sign in — stored in our database (hosted on Supabase) for sync. No other provider below receives your body profile data.</p>
   <ul>
     <li><strong>Vercel</strong> — hosts our backend API that processes product-read and fit-check requests. Your body profile is sent here transiently to compute a fit check and is immediately discarded; it is not stored. See section 1a. <a href="https://vercel.com/legal/privacy-policy">Privacy Policy</a></li>
-    <li><strong>Supabase</strong> — hosts the brand opt-out registry, the brand-request demand log, authentication, and — only if you sign in — the synced copy of your body profile, measurements, calibration and fit history (section 1e). <a href="https://supabase.com/privacy">Privacy Policy</a></li>
+    <li><strong>Supabase</strong> — hosts the brand opt-out registry, the brand-request demand log, restock alerts and push tokens (sections 1j and 1k), shared measurement snapshots (section 1h), links to slow stores still being read (section 1b), size-range taps (section 1l), authentication, and — only if you sign in — the synced copy of your body profile, measurements, calibration and fit history (section 1e). <a href="https://supabase.com/privacy">Privacy Policy</a></li>
     <li><strong>Anthropic (Claude)</strong> — used server-side to (a) enrich product descriptions when the source site lacks structured data (only public product text is sent, never body profile), and (b) read a measurement-sheet photo once if you use that feature (see section 1i). Under our agreement, neither use trains any AI model, and the sheet photo is not stored. <a href="https://www.anthropic.com/privacy">Privacy Policy</a></li>
     <li><strong>Google Gemini</strong> — used server-side as a fallback enrichment model under the same restrictions. <a href="https://policies.google.com/privacy">Privacy Policy</a></li>
     <li><strong>Google Sign-In via Supabase Auth</strong> (optional) — authentication only, if you choose to sign in. <a href="https://policies.google.com/privacy">Privacy Policy</a></li>
@@ -123,6 +126,7 @@
     <li><strong>Shared measurement snapshots</strong> are deleted automatically when the link you chose expires (1 week to 3 months), and can be revoked earlier on request.</li>
     <li><strong>Measurement-sheet photos</strong> are never stored — the image is read once and discarded.</li>
     <li><strong>Restock-alert entries</strong> — your email address and any account or device identifier are removed as soon as the notification is sent, you unsubscribe, or the alert expires. The brand, product URL and size are kept afterwards only as anonymous demand data.</li>
+    <li><strong>Size-range taps</strong> (store, product, bigger-or-smaller and a scrambled code) are deleted after 90 days.</li>
     <li><strong>Push notification tokens</strong> are kept while notifications are enabled and revoked when you turn them off or uninstall the app.</li>
   </ul>
 
@@ -157,7 +161,7 @@
     <li><strong>Right to opt-out of sale/sharing</strong>: we do not sell or share personal information.</li>
     <li><strong>Right to non-discrimination</strong>: we will not penalise you for exercising your rights.</li>
   </ul>
-  <p><strong>Categories collected:</strong> Identifiers (email, name — only if you sign in via Google); physical characteristics (body profile and measurements — on your device, and in your account only if you sign in); Sensory/Geolocation — none; Internet activity (product URLs are ephemeral, with one exception — a restock alert keeps the product URL linked to your email until the notification is sent, you unsubscribe, or it expires, section 2(j); fit history — on your device, and in your account only if you sign in); random per-install identifiers (one for rate-limiting, one for grouping crash reports, and a push token if you enable notifications — see sections 2(d), 2(f) and 2(k)).</p>
+  <p><strong>Categories collected:</strong> Identifiers (email, name — only if you sign in via Google); physical characteristics (body profile and measurements — on your device, and in your account only if you sign in); Sensory/Geolocation — none; Internet activity (product URLs are ephemeral, with two exceptions — a restock alert keeps the product URL linked to your email until the notification is sent, you unsubscribe, or it expires, section 1j; and the link to a store too slow to read while you wait is kept next to a random app identifier for at most six hours, section 1b; fit history — on your device, and in your account only if you sign in); random per-install identifiers (one for rate-limiting, one for grouping crash reports, and a push token if you enable notifications — see sections 1d, 1f and 1k).</p>
 
   <h2>11. Indian Residents (DPDP Act 2023)</h2>
   <p><strong>Data Fiduciary:</strong> Tessellate Studio. Contact: <a href="mailto:privacy@tessellate.co.in">privacy@tessellate.co.in</a>.</p>
@@ -172,7 +176,7 @@
   <h2>13. App Store Privacy Details</h2>
   <p><strong>Tracking:</strong> Alate does not track you across other companies' apps or websites. We do not use the IDFA or any device advertising identifier.</p>
   <p><strong>Data linked to you:</strong> Email address and name (only if you sign in via Google). Body profile, measurements, budget range, calibration garments and fit history (only if you sign in — synced to your account). Brand-request notify email (only if you opt in to "notify me when added"; held until the notification is sent and deleted within 30 days of sending, or deleted 90 days after you asked if it could not be sent). Restock alerts (your email, the product URL and the size, until the notification is sent, you unsubscribe, or the alert expires — after which only an anonymous record of the brand, URL and size remains). Our per-install identifiers — the rate-limiting id, the crash-grouping id, and the push token — are treated as linked to you, because when you are signed in the push-token record holds your account id in the same row. Crash reports are treated as linked for the same reason, even though they carry no name, email or account details themselves.</p>
-  <p><strong>Data not linked to you:</strong> Body profile and fit history when you are not signed in (stored on your device; the profile is sent to our backend transiently for each fit check and discarded), product URLs from successful reads (ephemeral), the link to a store too slow to read while you wait plus a random app identifier (at most six hours, see section 1b), unsupported-brand URL + brand domain (anonymised demand signal when no notify email is provided), and the anonymised unsupported-brand demand signal.</p>
+  <p><strong>Data not linked to you:</strong> Body profile and fit history when you are not signed in (stored on your device; the profile is sent to our backend transiently for each fit check and discarded), product URLs from successful reads (ephemeral), the link to a store too slow to read while you wait plus a random app identifier (at most six hours, see section 1b), unsupported-brand URL + brand domain (anonymised demand signal when no notify email is provided), the anonymised unsupported-brand demand signal, and size-range taps (store, product and a scrambled per-product code, section 1l).</p>
   <p><strong>Data used to track you:</strong> None.</p>
 
   <h2>14. Changes to This Policy</h2>

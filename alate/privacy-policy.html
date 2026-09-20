@@ -23,7 +23,7 @@
 
 <main class="doc">
   <h1>Privacy Policy</h1>
-  <p class="date">Version 6 · Effective September 18, 2026</p>
+  <p class="date">Version 7 · Effective September 19, 2026</p>
 
   <p>Alate ("we", "our", "the app") is a mobile application developed by <strong>Tessellate Studio</strong> that helps you predict whether clothing items will fit based on your body profile. This policy explains what data we collect, how we use it, and your rights.</p>
 
@@ -64,7 +64,7 @@
   <p>If you choose to share your measurements, the specific values you select are stored anonymously on our servers — with <strong>no name, account, or device identifier attached</strong> — behind a random link. You pick how long the link lives (from 1 week to 3 months); the snapshot is automatically deleted once it expires. Sharing is entirely optional, and only the fields you tick are included.</p>
 
   <h3>i) Measurement Sheet Scanning (optional, not stored)</h3>
-  <p>If you choose to scan a tailor's measurement sheet, the photo is sent <strong>once</strong> to our AI provider (Anthropic) solely to read the numbers on it. Before the photo is sent, the app lets you crop it so that names, phone numbers or anything else you don't want read are left out, and we instruct the AI to ignore any personal details that remain. Under our agreement, that image is <strong>not used to train any AI model</strong>, and we do <strong>not</strong> store the photo. Only the values you review and approve are saved, and they stay on your device (and in your account, if you are signed in).</p>
+  <p>If you choose to scan a tailor's measurement sheet, the photo is sent <strong>once</strong> to our AI provider — Google (Gemini), or OpenAI if Google is unavailable — solely to read the numbers on it. Before the photo is sent, the app lets you crop it so that names, phone numbers or anything else you don't want read are left out, and we instruct the AI to ignore any personal details that remain. Under both providers' paid API terms, that image is <strong>not used to train any AI model</strong>, and we do <strong>not</strong> store the photo. The provider may keep a copy for a limited time to detect abuse of its service, then deletes it — OpenAI states up to 30 days; Google says a limited period without naming one. Only the values you review and approve are saved, and they stay on your device (and in your account, if you are signed in).</p>
 
   <h3>j) Restock Alerts (optional, email waitlist)</h3>
   <p>If your recommended size is sold out, you may ask to be emailed when it returns. If you opt in, we store your email address, the product URL, and the size — solely to send that back-in-stock notification. Stock is re-checked against the live store; we never store the merchant's inventory. The email is never used for marketing, and you can unsubscribe from any alert email.</p>
@@ -95,8 +95,9 @@
   <ul>
     <li><strong>Vercel</strong> — hosts our backend API that processes product-read and fit-check requests. Your body profile is sent here transiently to compute a fit check and is immediately discarded; it is not stored. See section 1a. <a href="https://vercel.com/legal/privacy-policy">Privacy Policy</a></li>
     <li><strong>Supabase</strong> — hosts the brand opt-out registry, the brand-request demand log, restock alerts and push tokens (sections 1j and 1k), shared measurement snapshots (section 1h), links to slow stores still being read (section 1b), size-range taps (section 1l), authentication, and — only if you sign in — the synced copy of your body profile, measurements, calibration and fit history (section 1e). <a href="https://supabase.com/privacy">Privacy Policy</a></li>
-    <li><strong>Anthropic (Claude)</strong> — used server-side to (a) enrich product descriptions when the source site lacks structured data (only public product text is sent, never body profile), and (b) read a measurement-sheet photo once if you use that feature (see section 1i). Under our agreement, neither use trains any AI model, and the sheet photo is not stored. <a href="https://www.anthropic.com/privacy">Privacy Policy</a></li>
-    <li><strong>Google Gemini</strong> — used server-side as a fallback enrichment model under the same restrictions. <a href="https://policies.google.com/privacy">Privacy Policy</a></li>
+    <li><strong>Google Gemini</strong> — used server-side, on paid API terms that do not train on what we send, to (a) enrich product descriptions when the source site lacks structured data (only public product text is sent, never body profile), and (b) read a measurement-sheet photo once if you use that feature (see section 1i). <a href="https://ai.google.dev/gemini-api/terms">Gemini API Terms</a> · <a href="https://policies.google.com/privacy">Privacy Policy</a></li>
+    <li><strong>OpenAI</strong> — used server-side, on API terms that do not train on what we send, as the fallback when Gemini is unavailable, for the same two purposes. <a href="https://openai.com/policies/privacy-policy">Privacy Policy</a></li>
+    <li><strong>Anthropic (Claude)</strong> — used server-side only as a last fallback for enriching public product text; never receives your body profile or a measurement-sheet photo. <a href="https://www.anthropic.com/privacy">Privacy Policy</a></li>
     <li><strong>Google Sign-In via Supabase Auth</strong> (optional) — authentication only, if you choose to sign in. <a href="https://policies.google.com/privacy">Privacy Policy</a></li>
     <li><strong>Sentry</strong> — crash reporting, PII-scrubbed. <a href="https://sentry.io/privacy/">Privacy Policy</a></li>
     <li><strong>Firebase Crashlytics</strong> — native crash reporting, PII-scrubbed. <a href="https://firebase.google.com/support/privacy">Privacy Policy</a></li>

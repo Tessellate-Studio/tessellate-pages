@@ -109,7 +109,7 @@
   <h2>5. Security</h2>
   <ul>
     <li>All network communication uses HTTPS / TLS.</li>
-    <li>Local data (body profile, fit history, age confirmation, device ID) is stored in AsyncStorage, which is sandboxed per-app by the OS.</li>
+    <li>Local data (body profile, fit history, age confirmation, device ID) is kept in the app's private storage on your device, which your phone's system walls off from other apps.</li>
     <li>Authentication tokens (if you sign in) are stored in Expo SecureStore, backed by iOS Keychain / Android KeyStore.</li>
     <li>Synced account data is protected by database row-level security: every read and write runs under your own signed-in session, and no other user can reach it.</li>
     <li>Our backend enforces rate limits and input validation. URLs are validated before fetching to prevent SSRF.</li>

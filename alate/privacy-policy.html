@@ -124,7 +124,7 @@
     <li><strong>Local data</strong> persists until you clear it or uninstall the app.</li>
     <li><strong>Synced account data</strong> (body profile, measurements, budget range, calibration, fit history) is retained until you delete your account, then permanently deleted within 30 days.</li>
     <li><strong>Crash reports</strong> are retained for 90 days.</li>
-    <li><strong>Usage statistics</strong> (section 1m) are kept for at most 13 months.</li>
+    <li><strong>Usage statistics</strong> (section 1m) are kept for at most 13 months. Because they carry only a random identifier that is replaced when you sign out, we cannot find past records to delete them individually; they are deleted when that period ends.</li>
     <li><strong>Rate-limit counters</strong> reset every minute and are not persisted.</li>
     <li><strong>Brand opt-out entries</strong> are retained indefinitely so the opt-out persists across deployments.</li>
     <li><strong>Brand request entries</strong> (URL + brand domain) are retained indefinitely as demand signal, not linked to your account. Optional notify-me email addresses are deleted within 30 days of the notification being sent, or upon your request — whichever is sooner. Until the notification is sent, the email is kept so that we can send it — but never for more than 90 days after your request. If we haven't been able to send it by then, the email is deleted and the brand entry stays as demand signal, not linked to you.</li>

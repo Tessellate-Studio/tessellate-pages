@@ -27,7 +27,7 @@
 
   <h2>How it works</h2>
   <ul>
-    <li>Alate fetches public product pages only when a user explicitly pastes or shares the URL.</li>
+    <li>Alate reads a public product page only for a user who has that page's link: when they paste or share it for a fit check, or — to show them the product's name and brand before they ask for one — when they have copied it and open the app's fit-check panel. We never crawl.</li>
     <li>We identify ourselves with the User-Agent <code>Alate/1.0 (+https://tessellate.co.in/alate/brand-optout.html)</code>.</li>
     <li>We respect <code>robots.txt</code>: if your file disallows our path, we bail automatically.</li>
     <li>We do not redistribute scraped data. Product information is shown only to the user who requested it, alongside a "View on Store" link back to your storefront.</li>
@@ -46,7 +46,7 @@
   </div>
 
   <div class="callout dark">
-    <p><strong>What happens next</strong>We add your origin to our blocklist within 24 hours. Any user who pastes a URL from your store will see a "This brand has asked not to be read — please visit their store directly" card instead of a fit analysis. Users can still reach you by tapping through to your storefront.</p>
+    <p><strong>What happens next</strong>We add your origin to our blocklist within 24 hours. From then on we read nothing from your store — neither a fit check nor the name of a copied link. Any user who pastes a URL from your store will see a "This brand has asked not to be read — please visit their store directly" card instead of a fit analysis. Users can still reach you by tapping through to your storefront.</p>
   </div>
 
   <h2>Partnership alternative</h2>

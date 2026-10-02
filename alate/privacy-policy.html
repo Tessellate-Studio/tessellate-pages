@@ -23,7 +23,7 @@
 
 <main class="doc">
   <h1>Privacy Policy</h1>
-  <p class="date">Version 9 · Effective September 30, 2026</p>
+  <p class="date">Version 10 · Effective October 2, 2026</p>
 
   <p>Alate ("we", "our", "the app") is a mobile application developed by <strong>Tessellate Studio</strong> that helps you predict whether clothing items will fit based on your body profile. This policy explains what data we collect, how we use it, and your rights.</p>
 
@@ -39,6 +39,7 @@
 
   <h3>b) Product URLs (ephemeral, with one short-lived exception)</h3>
   <p>When you paste or share a product URL, we send that URL to our backend to read publicly available product information (name, price, image, description, material, sizes) from the source website. The URL is processed in real time and discarded, and we do not persist URLs with your name, email or account. Tracking tags in a link (such as <code>utm_</code> tags or ad-click codes) are removed before a link is stored or sent to an AI service. <strong>One exception:</strong> some stores are too slow to read while you wait. When that happens we save that link, together with your device's random app identifier, so we can keep trying in the background and hand the result to your app the next time it asks. That entry is deleted the moment your app confirms it has the result, within 15 minutes of delivery if it never confirms, and in every case within six hours. It is used for nothing else. The fit check result is stored locally on your device as part of your fit history.</p>
+  <p><strong>Links on your clipboard.</strong> When you open the fit-check panel, the app looks at your clipboard to see whether it holds a link, so it can offer to check it — your phone may show its own notice when it does. If the link is a shop's product page, the app sends the address of that page, without anything after a <code>?</code> or <code>#</code>, to our backend to look up the brand and the product's name, so the panel can say what the link is before you tap. Nothing else on your clipboard is sent: text that is not a link, and links that are not a shop's product page (a sign-in link, a document, an order page), stay on your phone. The lookup reads no photo, runs no fit check, and is neither stored nor logged. A fit check still runs only when you tap.</p>
 
   <h3>c) Fit Check History</h3>
   <p>Results of your fit checks (product name, image URL, fit score, warnings, recommended size, timestamps) are stored locally on your device. If you sign in, your most recent fit checks (up to 50) are also stored in your account for cross-device sync — see section 1e.</p>
@@ -88,7 +89,7 @@
     <li><strong>We identify ourselves</strong> with the User-Agent <code>Alate/1.0 (+https://tessellate.co.in/alate/brand-optout.html)</code> so site owners can identify and contact us.</li>
     <li><strong>We respect robots.txt</strong> — if an origin's robots.txt disallows automated access to a product path, we bail with a "please visit the store directly" message.</li>
     <li><strong>We respect explicit opt-outs</strong> — any brand can request removal via <a href="brand-optout.html">our opt-out page</a>. Listed brands are skipped on subsequent fetches.</li>
-    <li><strong>We do not bulk-crawl</strong> — we only fetch URLs explicitly submitted by a user.</li>
+    <li><strong>We do not bulk-crawl</strong> — we only read a page a user has the link to: one they pasted or shared for a fit check, or one they copied and then opened the fit-check panel with. For a copied link we read only the product's name and brand, from the store's own product data, until the user asks for a fit check (section 1b).</li>
     <li><strong>We do not redistribute catalogues</strong> — product data is used to generate a fit verdict for the user who submitted the URL; it is not aggregated, resold, or served as a browseable catalogue.</li>
     <li><strong>We point users back to the merchant</strong> — the fit card links directly to the source store via a "View on Store" button and a "Data from {brand}" attribution line.</li>
   </ul>
@@ -126,6 +127,7 @@
     <li><strong>Crash reports</strong> are retained for 90 days.</li>
     <li><strong>Usage statistics</strong> (section 1m) are kept for at most 13 months. Because they carry only a random identifier that is replaced when you sign out, we cannot find past records to delete them individually; they are deleted when that period ends.</li>
     <li><strong>Rate-limit counters</strong> reset every minute and are not persisted.</li>
+    <li><strong>Clipboard link lookups</strong> (section 1b) are not retained: the link and the answer are discarded as soon as the answer is sent.</li>
     <li><strong>Brand opt-out entries</strong> are retained indefinitely so the opt-out persists across deployments.</li>
     <li><strong>Brand request entries</strong> (URL + brand domain) are retained indefinitely as demand signal, not linked to your account. Optional notify-me email addresses are deleted within 30 days of the notification being sent, or upon your request — whichever is sooner. Until the notification is sent, the email is kept so that we can send it — but never for more than 90 days after your request. If we haven't been able to send it by then, the email is deleted and the brand entry stays as demand signal, not linked to you.</li>
     <li><strong>Product URLs from successful reads</strong> are never retained. The one exception is a store too slow to read while you wait: that link is kept — with your device's random app identifier, never your name, email or account — until your app collects the result. It is deleted on confirmation, within 15 minutes of delivery if your app never confirms, and never kept beyond six hours.</li>

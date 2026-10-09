@@ -28,8 +28,10 @@
   <h2>How it works</h2>
   <ul>
     <li>Alate reads a public product page only for a user who has that page's link: when they paste or share it for a fit check, or — to show them the product's name and brand before they ask for one — when they have copied it and open the app's fit-check panel. We never crawl.</li>
-    <li>We identify ourselves with the User-Agent <code>Alate/1.0 (+https://tessellate.co.in/alate/brand-optout.html)</code>.</li>
-    <li>We respect <code>robots.txt</code>: if your file disallows our path, we bail automatically.</li>
+    <li>Two follow-ups re-read a page a user already asked about, with nobody waiting on screen: if your store is too slow to read in time, we keep trying in the background for up to six hours; and if a user asked to hear when their size is back in stock, we re-check that one page about every six hours until it is back or the alert expires. Both follow the same opt-out and <code>robots.txt</code> rules as everything else.</li>
+    <li>If a user shares a link from your own app (an AppsFlyer OneLink or a similar link service), we ask the link service where it points and then read your product page as above. The opt-out and <code>robots.txt</code> rules apply to your store, not to the link service.</li>
+    <li>Every request carries the token <code>Alate/1.0 (+https://tessellate.co.in/alate/brand-optout.html)</code>. It is added to the end of an ordinary browser User-Agent, because many stores turn away anything that doesn't look like a browser. The full string we send is:<br><code>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Alate/1.0 (+https://tessellate.co.in/alate/brand-optout.html)</code><br>When we unwrap an app link we send the same token on an Android phone's User-Agent instead.</li>
+    <li>We respect <code>robots.txt</code>. To address us, use <code>User-agent: Alate</code>. If your file has no group for us, we follow your <code>*</code> group. Because our full string contains <code>Mozilla</code>, <code>Chrome</code> and <code>Safari</code>, a group naming one of those applies to us too. If your file disallows the product's path, we stop before reading the page. If your <code>robots.txt</code> can't be fetched at all (for example, your server returns an error), we go ahead and read the page — the opt-out below doesn't depend on it.</li>
     <li>We do not redistribute scraped data. Product information is shown only to the user who requested it, alongside a "View on Store" link back to your storefront.</li>
     <li>If you want to opt out anyway — no justification required — send us the request below and we'll honour it within 24 hours.</li>
   </ul>
@@ -46,7 +48,7 @@
   </div>
 
   <div class="callout dark">
-    <p><strong>What happens next</strong>We add your origin to our blocklist within 24 hours. From then on we read nothing from your store — neither a fit check nor the name of a copied link. Any user who pastes a URL from your store will see a "This brand has asked not to be read — please visit their store directly" card instead of a fit analysis. Users can still reach you by tapping through to your storefront.</p>
+    <p><strong>What happens next</strong>We add your origin to our blocklist within 24 hours. From then on we read nothing from your store — no fit check, no name for a copied link, no background retry and no restock re-check. Any user who pastes a URL from your store will see a card saying the brand has asked not to be scraped and to visit your store directly, instead of a fit analysis. Users can still reach you by tapping through to your storefront.</p>
   </div>
 
   <h2>Partnership alternative</h2>

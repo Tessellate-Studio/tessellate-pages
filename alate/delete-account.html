@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alate — Delete Your Data</title>
-<meta name="description" content="How to delete your Alate body profile, fit history and signed-in account.">
+<meta name="description" content="How to delete your Alate account, body profile and fit history — in the app or by email.">
 <link rel="icon" type="image/png" href="assets/icon.png">
 <link rel="apple-touch-icon" href="assets/icon.png">
 <link rel="stylesheet" href="assets/alate.css">
@@ -24,51 +24,59 @@
 <main class="doc">
   <h1>Delete Your Data</h1>
 
-  <p class="lead">When you're not signed in, everything Alate knows about you lives on your device — delete it from within the app. If you signed in with Google (optional), a synced copy lives in your account, and there's a separate path to delete that.</p>
+  <p class="lead">When you're not signed in, almost everything Alate knows about you lives on your device — delete it from within the app. If you signed in with Google (optional), a synced copy lives in your account, and you can delete the account from the app too.</p>
 
   <h2>What's stored where</h2>
   <ul>
     <li><strong>Body profile</strong> (height, proportions, exact measurements) — on your device. If you're signed in, also in your account.</li>
     <li><strong>Fit check history</strong> — on your device. If you're signed in, your most recent fit checks (up to 50) are also in your account.</li>
+    <li><strong>Saved and bought pieces</strong> (including your "How did it fit?" answers) — on your device. If you're signed in, bought pieces and your answers are also in your account; a note you type stays on your device only.</li>
     <li><strong>Fit-calibration garments and budget range</strong> — on your device. If you're signed in, also in your account.</li>
-    <li><strong>Age-gate confirmation</strong> — on your device only.</li>
-    <li><strong>Device identifier</strong> (random UUID for rate-limiting) — on your device; the server sees it but doesn't link it to you.</li>
+    <li><strong>Age-gate confirmation and privacy-policy agreement</strong> — on your device only.</li>
+    <li><strong>Device identifier</strong> (a random ID made on install) — on your device; the server stores it only with the things listed in section 1d of the <a href="privacy-policy.html">privacy policy</a>.</li>
     <li><strong>Google account info</strong> (email + name, only if you signed in) — stored via Supabase Auth server-side.</li>
-    <li><strong>Brand-request notify email</strong> (only if you opted in to "notify me when added" on an unsupported-brand fit check) — stored server-side until the notification is sent, then deleted within 30 days — or deleted 90 days after you asked, if we haven't been able to send it.</li>
-    <li><strong>Restock-alert entries</strong> (email, product URL, size — only if you asked for one) — your email and any identifier are removed once the email is sent, the alert expires, or the moment you unsubscribe; the brand, product link and size stay only as demand data.</li>
+    <li><strong>Brand-request notify email</strong> (only if you were signed in and tapped "notify me when added") — stored server-side until the notification is sent, then deleted within 30 days — or deleted 90 days after you asked, if we haven't been able to send it.</li>
+    <li><strong>Restock-alert entries</strong> (product URL, size and device identifier, plus your email and account id if you were signed in) — your email and identifiers are removed once the notification is sent, the alert expires, or the moment you unsubscribe; the brand, product link and size stay only as demand data.</li>
+    <li><strong>Advanced features request</strong> (only if you asked for one: the email you gave, device identifier, account id if signed in) — stored server-side until you delete your account or ask us to delete it.</li>
     <li><strong>Shared measurement snapshots</strong> (only if you shared a link) — deleted when the link expires, or earlier on request.</li>
   </ul>
 
   <h2>Delete from the app</h2>
   <div class="callout">
-    <p><strong>Body profile</strong></p>
+    <p><strong>Your signed-in account</strong></p>
     <ol>
-      <li>Open Alate and tap the <strong>Profile</strong> tab</li>
+      <li>Open Alate and go to <strong>Profile</strong></li>
       <li>Scroll to the bottom</li>
-      <li>Tap <strong>Delete my body profile</strong> and confirm</li>
+      <li>Tap <strong>Delete account</strong> and confirm</li>
     </ol>
-    <p><strong>Fit history</strong></p>
+    <p><strong>Body profile</strong> (also removes your saved and bought pieces)</p>
     <ol>
-      <li>Open Alate and tap the <strong>History</strong> tab</li>
-      <li>Tap <strong>Clear history</strong> at the bottom of the screen</li>
+      <li>Open Alate and go to <strong>Profile</strong></li>
+      <li>Scroll to the bottom</li>
+      <li>Tap <strong>Delete my profile</strong> and confirm</li>
     </ol>
-    <p><strong>Everything else on the device</strong> (including age-gate and device ID): uninstall the app. OS-level uninstall removes all device-local storage.</p>
+    <p><strong>A fit check</strong></p>
+    <ol>
+      <li>Open the fit in your history</li>
+      <li>Tap the bin icon and confirm</li>
+    </ol>
+    <p><strong>Everything else on the device</strong> (including the age-gate confirmation and device ID): uninstall the app. OS-level uninstall removes all device-local storage.</p>
   </div>
-  <p>If you're signed in, deleting your profile or history in the app syncs that deletion to your account too. Signing out clears the synced copy from that device but leaves it in your account, so a later sign-in restores it — to remove the account copy for good, use the next section.</p>
+  <p>If you're signed in, deleting your profile or a fit in the app syncs that deletion to your account too. Signing out clears the synced copy from that device but leaves it in your account, so a later sign-in restores it — to remove the account copy for good, delete the account.</p>
 
-  <h2>Delete your signed-in account</h2>
-  <p>If you opted in to Google Sign-In, deleting the account removes the Supabase Auth record and every synced row — profile, measurements, budget, calibration and fit history. To request deletion:</p>
+  <h2>What deleting your account removes</h2>
+  <p>Deleting the account removes the Supabase Auth record and every synced row — profile, measurements, budget, calibration, fit history and bought pieces — along with your push tokens and any Advanced features request. Your email and account id are removed from any restock alert or brand notify request. This happens straight away, and always within 30 days.</p>
+  <p>No longer have the app? Email us instead and include the email address associated with your Google sign-in:</p>
   <div class="callout">
     <p><strong>Email</strong><a href="mailto:privacy@tessellate.co.in?subject=Account%20Deletion%20Request%20-%20Alate">privacy@tessellate.co.in</a></p>
   </div>
-  <p>Please include the email address associated with your Google sign-in. We will confirm deletion within 30 days.</p>
 
-  <h2>Delete a brand-request notify email</h2>
-  <p>If you opted in to be notified when an unsupported brand is added (via the "notify me" prompt on the fit-check error screen), you can request deletion of that record without deleting anything else.</p>
+  <h2>Delete a notify email or an Advanced features request</h2>
+  <p>You can ask us to delete a brand-request notify email, or an Advanced features request you made while signed out, without deleting anything else.</p>
   <div class="callout">
-    <p><strong>Email</strong><a href="mailto:privacy@tessellate.co.in?subject=Delete%20brand-request%20notify%20-%20Alate">privacy@tessellate.co.in</a></p>
+    <p><strong>Email</strong><a href="mailto:privacy@tessellate.co.in?subject=Delete%20my%20request%20-%20Alate">privacy@tessellate.co.in</a></p>
   </div>
-  <p>Use the subject "Delete brand-request notify - Alate" and include the email address you provided. We will remove the entry within 30 days.</p>
+  <p>Include the email address you provided. We will remove the entry within 30 days.</p>
 
   <div class="callout dark">
     <p><strong>Deletion is permanent</strong>When you're not signed in, your body profile and fit history are stored only on your device — uninstalling the app deletes them. A fit check sends your profile to our server to work out your size, and it is discarded straight after; nothing is kept.</p>

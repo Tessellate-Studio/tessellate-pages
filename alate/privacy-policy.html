@@ -23,7 +23,7 @@
 
 <main class="doc">
   <h1>Privacy Policy</h1>
-  <p class="date">Effective October 9, 2026</p>
+  <p class="date">Effective October 10, 2026</p>
 
   <p>Alate ("we", "our", "the app") is a mobile application developed by <strong>Tessellate Studio</strong> that helps you predict whether clothing items will fit based on your body profile. This policy explains what data we collect, how we use it, and your rights.</p>
 
@@ -61,8 +61,13 @@
   <p>If you paste a URL from a brand we don't yet support, the URL and brand domain are recorded in our backend so we can prioritise which storefronts to onboard next. We do <strong>not</strong> contact the brand on your behalf, and your body profile is never associated with the request.</p>
   <p>Optionally, you can tap to be told when we add support for that brand. The app then remembers the brand on your device and tells you inside the app. If you are signed in with Google, the same tap also sends us your Google account's email address, so we can email you once as well; if you are signed out, no email is taken. That email is stored alongside the brand entry for the sole purpose of sending that single notification — never used for marketing, newsletters, or any other communication. We keep it until that notification is sent, then remove it within 30 days; if we haven't been able to send it within 90 days of your request, we delete it then (section 6). We do not store your account id with brand requests. To know when to tell you in the app, it occasionally asks our server whether the product you pasted can be checked yet — that request carries only the product link, which is read and discarded like any other (section 1b).</p>
 
-  <h3>h) Shared Measurement Snapshots (optional, server-side)</h3>
-  <p>If you choose to share your measurements, the specific values you select are stored on our servers with <strong>no name, account, or device identifier attached</strong>, behind a random link. You pick how long the link lives (from 1 week to 3 months); the snapshot is automatically deleted within a day of expiring. Sharing is entirely optional, and only the fields you tick are included.</p>
+<!-- h) Shared Measurement Snapshots — removed 2026-10-10. Measurement sharing
+     is not available to anyone using the app: it sits behind the Advanced
+     features group, and the only approved membership is the developer's own.
+     The letter h is left retired so the later cross-references (1i, 1j, 1l,
+     1n) keep pointing at the right sections. RESTORE THIS SECTION, the
+     retention line in section 6 and the delete-account bullet before any
+     other account is approved. -->
 
   <h3>i) Measurement Sheet Scanning (optional, not stored)</h3>
   <p>If you choose to scan a tailor's measurement sheet, the photo is sent <strong>once</strong> to our AI provider — Google (Gemini), or OpenAI if Google is unavailable — solely to read the numbers on it. Before the photo is sent, the app lets you crop it so that names, phone numbers or anything else you don't want read are left out, and we instruct the AI to ignore any personal details that remain. Under both providers' paid API terms, that image is <strong>not used to train any AI model</strong>, and we do <strong>not</strong> store the photo. The provider may keep a copy for a limited time to detect abuse of its service, then deletes it — OpenAI states up to 30 days; Google says a limited period without naming one. Only the values you review and approve are saved, and they stay on your device (and in your account, if you are signed in).</p>
@@ -101,7 +106,7 @@
   <p>We use the following service providers strictly to operate the app. Your body profile is processed by our own backend (hosted on Vercel) transiently to compute a fit check, and — only if you sign in — stored in our database (hosted on Supabase) for sync. No other provider below receives your body profile data.</p>
   <ul>
     <li><strong>Vercel</strong> — hosts our backend API that processes product-read and fit-check requests. Your body profile is sent here transiently to compute a fit check and is immediately discarded; it is not stored. See section 1a. <a href="https://vercel.com/legal/privacy-policy">Privacy Policy</a></li>
-    <li><strong>Supabase</strong> — hosts the brand opt-out registry, the brand-request demand log, restock alerts and push tokens (sections 1j and 1k), shared measurement snapshots (section 1h), links to slow stores still being read (section 1b), size-range taps (section 1l), Advanced features requests (section 1n), authentication, and — only if you sign in — the synced copy of your body profile, measurements, calibration, fit history and bought pieces (section 1e). <a href="https://supabase.com/privacy">Privacy Policy</a></li>
+    <li><strong>Supabase</strong> — hosts the brand opt-out registry, the brand-request demand log, restock alerts and push tokens (sections 1j and 1k), links to slow stores still being read (section 1b), size-range taps (section 1l), Advanced features requests (section 1n), authentication, and — only if you sign in — the synced copy of your body profile, measurements, calibration, fit history and bought pieces (section 1e). <a href="https://supabase.com/privacy">Privacy Policy</a></li>
     <li><strong>Google Gemini</strong> — used server-side, on paid API terms that do not train on what we send, to (a) enrich product descriptions when the source site lacks structured data (only public product text is sent, never body profile), and (b) read a measurement-sheet photo once if you use that feature (see section 1i). <a href="https://ai.google.dev/gemini-api/terms">Gemini API Terms</a> · <a href="https://policies.google.com/privacy">Privacy Policy</a></li>
     <li><strong>OpenAI</strong> — used server-side, on API terms that do not train on what we send, as the fallback when Gemini is unavailable, for the same two purposes. <a href="https://openai.com/policies/privacy-policy">Privacy Policy</a></li>
     <li><strong>Anthropic (Claude)</strong> — used server-side only as a last fallback for enriching public product text; never receives your body profile or a measurement-sheet photo. <a href="https://www.anthropic.com/privacy">Privacy Policy</a></li>
@@ -134,7 +139,6 @@
     <li><strong>Brand opt-out entries</strong> are retained indefinitely so the opt-out persists across deployments.</li>
     <li><strong>Brand request entries</strong> (URL + brand domain) are retained indefinitely as demand signal, not linked to your account. Optional notify-me email addresses are deleted within 30 days of the notification being sent, or upon your request — whichever is sooner. Until the notification is sent, the email is kept so that we can send it — but never for more than 90 days after your request. If we haven't been able to send it by then, the email is deleted and the brand entry stays as demand signal, not linked to you.</li>
     <li><strong>Product URLs from successful reads</strong> are never retained. The one exception is a store too slow to read while you wait: that link is kept — with your device's random app identifier, never your name, email or account — until your app collects the result. It is deleted on confirmation, within 15 minutes of delivery if your app never confirms, and never kept beyond six hours.</li>
-    <li><strong>Shared measurement snapshots</strong> are deleted automatically when the link you chose expires (1 week to 3 months), and can be revoked earlier on request.</li>
     <li><strong>Measurement-sheet photos</strong> are never stored — the image is read once and discarded.</li>
     <li><strong>Restock-alert entries</strong> — your email address and any account or device identifier are removed as soon as the notification is sent, you unsubscribe, or the alert expires. The brand, product URL and size are kept afterwards only as demand data, with your email and identifiers removed.</li>
     <li><strong>Size-range taps</strong> (store, product, bigger-or-smaller and a scrambled code) are deleted after 90 days.</li>

@@ -7,13 +7,14 @@
 <meta name="description" content="Ask Alate not to read your storefront's product pages. Honoured within 24 hours, no justification needed.">
 <link rel="icon" type="image/png" href="assets/icon.png">
 <link rel="apple-touch-icon" href="assets/icon.png">
+<meta name="theme-color" content="#efedf1">
 <link rel="stylesheet" href="assets/alate.css">
 </head>
-<body>
+<body class="docs">
 
 <header class="nav">
   <div class="wrap">
-    <span class="wordmark"><img src="assets/wordmark.svg" alt="alate"></span>
+    <a class="wordmark" href="./"><img src="assets/img/wordmark-dark.png" alt="alate" width="94" height="30"></a>
     <nav class="nav-links" aria-label="Primary">
       <a href="privacy-policy.html">Privacy</a>
     </nav>
@@ -31,7 +32,7 @@
     <li>Two follow-ups re-read a page a user already asked about, with nobody waiting on screen: if your store is too slow to read in time, we keep trying in the background for up to six hours; and if a user asked to hear when their size is back in stock, we re-check that one page about every six hours until it is back or the alert expires. Both follow the same opt-out and <code>robots.txt</code> rules as everything else.</li>
     <li>If a user shares a link from your own app (an AppsFlyer OneLink or a similar link service), we ask the link service where it points and then read your product page as above. The opt-out and <code>robots.txt</code> rules apply to your store, not to the link service.</li>
     <li>Every request names us first. The full User-Agent we send is:<br><code>Alate/1.0 (+https://tessellate.co.in/alate/brand-optout.html) Mozilla/5.0 (compatible)</code><br>When we ask an app-link service where a link points, we send <code>Alate/1.0 (+https://tessellate.co.in/alate/brand-optout.html) Mozilla/5.0 (Linux; Android 14)</code>, because those services answer differently for Android. Some stores build their product pages in the browser; for those we render the one page with a headless browser that carries the same name.</li>
-    <li><strong>If your store blocks or challenges us, we stop.</strong> A refusal (for example HTTP 403 or 429) or a bot check such as a CAPTCHA ends the read for that store: we send the shopper to your store instead and do not retry another way.</li>
+    <li><strong>If your store blocks or challenges us, we stop.</strong> A refusal (HTTP 403, 429 or 503) or a bot check such as a CAPTCHA ends the read for that store: we send the shopper to your store instead and do not retry another way.</li>
     <li>We respect <code>robots.txt</code>. To address us, use <code>User-agent: Alate</code>. If your file has no group for us, we follow your <code>*</code> group. Because our full string contains <code>Mozilla</code>, a group naming it applies to us too. If your file disallows the product's path, we stop before reading the page. If your <code>robots.txt</code> can't be fetched at all (for example, your server returns an error), we go ahead and read the page — the opt-out below doesn't depend on it.</li>
     <li>We do not redistribute scraped data. Product information is shown only to the user who requested it, alongside a "View on Store" link back to your storefront.</li>
     <li>If you want to opt out anyway — no justification required — send us the request below and we'll honour it within 24 hours.</li>
@@ -61,7 +62,7 @@
 
 <footer class="foot">
   <div class="wrap">
-    <span class="wordmark"><img src="assets/wordmark.svg" alt="alate"></span>
+    <a class="wordmark" href="./"><img src="assets/img/wordmark-dark.png" alt="alate" width="69" height="22"></a>
     <ul>
       <li><a href="privacy-policy.html">Privacy</a></li>
       <li><a href="mailto:partners@tessellate.co.in">partners@tessellate.co.in</a></li>

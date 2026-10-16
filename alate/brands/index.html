@@ -5,273 +5,337 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alate for Brands — Your size data, where shoppers choose a size</title>
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="A Shopify app for independent clothing brands. Put your real size data in front of shoppers at the moment they choose a size, so fewer orders start as a guess.">
-<meta property="og:title" content="Alate for Brands — Cut fit-driven returns, keep the margin">
-<meta property="og:description" content="Your size charts, in front of shoppers at the moment they pick a size. One Shopify app, no engineers.">
+<meta name="description" content="A Shopify app for clothing brands. Add your size charts and fit details once; shoppers get the size likely to fit them — on your product page and in the Alate app.">
+<meta name="theme-color" content="#1a1620">
+<meta property="og:title" content="Alate for Brands">
+<meta property="og:description" content="Your size chart, answering 'will it fit me?' on your own product pages and in the Alate app.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tessellate.co.in/alate/brands/">
 <meta property="og:image" content="https://tessellate.co.in/alate/assets/icon.png">
 <link rel="canonical" href="https://tessellate.co.in/alate/brands/">
 <link rel="icon" type="image/png" href="../assets/icon.png">
 <link rel="apple-touch-icon" href="../assets/icon.png">
+<link rel="preload" href="../assets/fonts/Raleway-ExtraLight.otf" as="font" type="font/otf" crossorigin>
 <link rel="stylesheet" href="../assets/alate.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
 <header class="nav">
   <div class="wrap">
-    <a class="wordmark" href="./"><img src="../assets/wordmark.svg" alt="alate"></a>
+    <a class="wordmark" href="./" aria-label="Alate for Brands"><img src="../assets/img/wordmark-light.png" alt="alate" width="94" height="30"></a>
     <nav class="nav-links" aria-label="Primary">
-      <a class="hide-sm" href="#shoppers-see">What shoppers see</a>
-      <a class="hide-sm" href="#faq">FAQ</a>
+      <a class="hide-sm" href="#shoppers">What shoppers see</a>
+      <a class="hide-sm" href="#data">Your data</a>
+      <a class="hide-sm" href="guide.html">Guide</a>
       <button class="pill" type="button" data-contact>Get early access</button>
     </nav>
   </div>
 </header>
 
-<main>
-  <section class="hero">
+<nav class="dots" aria-label="Sections"></nav>
+
+<main id="main" class="deck">
+
+  <!-- 1 · Hero -->
+  <section class="panel photo hero" id="top" data-title="Alate for Brands" style="background-image:url(../assets/img/backdrop-satin.jpg)">
     <div class="wrap hero-grid">
       <div>
-        <p class="eyebrow">Alate for Brands · A Shopify app for independent brands</p>
-        <h1>Every return you don't get is margin you keep.</h1>
-        <p class="sub">Size and fit are behind over half of fashion returns, by one industry report (Virtusize). Alate puts your brand's real size data in front of shoppers at the moment they choose a size — so fewer orders start as a guess.</p>
+        <p class="overline">Alate for Brands · a Shopify app</p>
+        <h1 class="display long">your size chart, where they pick a size.</h1>
+        <p class="italic-line">Share your sizing once. Shoppers find the size likely to fit them — on your product page, and in the Alate app.</p>
+        <p class="lede">Size and fit are behind over half of fashion returns, by one industry report (Virtusize). Alate puts your own size data in front of shoppers at the moment they choose, so fewer orders start as a guess.</p>
         <div class="cta-row">
           <button class="pill" type="button" data-contact>Get early access</button>
-          <a class="ghost" href="#shoppers-see">See what your shoppers get →</a>
+          <a class="ghost" href="#shoppers">See what shoppers get</a>
         </div>
-        <p class="cta-note">We're onboarding a small set of independent brands by hand. Write to us and we'll set you up on your store.</p>
+        <p class="note">We're setting up a small group of independent brands by hand, with a private install link. Not in the public Shopify App Store yet.</p>
       </div>
 
-      <div class="mock" aria-hidden="true">
-        <div class="mock-top">
-          <span class="mock-brand">Your product page</span>
-          <span class="mock-brand">Shopify</span>
+      <div class="fitcard glass" aria-hidden="true">
+        <p class="brand">Your product page</p>
+        <p class="name">Everyday linen shirt</p>
+        <p class="meta">₹3,600 <span class="chip">XS</span><span class="chip">S</span><span class="chip">M</span><span class="chip lit">L</span><span class="chip">XL</span></p>
+        <div class="rows">
+          <div class="row"><span>Chest</span><span>98 cm</span></div>
+          <div class="row"><span>Waist</span><span>84 cm</span></div>
+          <div class="row"><span>Hips</span><span>100 cm</span></div>
         </div>
-        <div class="mock-img"></div>
-        <p class="mock-title">Everyday linen shirt</p>
-        <p class="mock-price">₹3,600</p>
-        <div class="chips">
-          <span class="chip">XS</span><span class="chip">S</span><span class="chip">M</span><span class="chip on">L</span><span class="chip">XL</span>
+        <div class="verdict">
+          <span class="size">try <b>L</b></span>
+          <span class="chip great"><span class="dotmark"></span>In stock</span>
         </div>
-        <span class="mock-btn outline">What's my size?</span>
-        <div class="mock-verdict">
-          <div>
-            <div class="big">Your size here: L</div>
-            <div class="conf">From this brand's own size chart</div>
-          </div>
-          <span class="chip">In stock</span>
-        </div>
-        <p class="mock-caption">Illustrative — the button appears on products you've given a body-measurement size chart.</p>
+        <p class="why">Answered with the size chart of this exact product</p>
+        <p class="caption">Illustration of the Alate Size Finder block. It takes on your theme's fonts and colours.</p>
       </div>
     </div>
+    <a class="scroll-cue" href="#cost">Scroll</a>
   </section>
 
-  <section class="band">
-    <div class="wrap band-grid">
-      <div>
-        <h2>What one fit-driven return actually costs you</h2>
-        <p class="kicker">On a small order, that chain can cost more than the margin. The cheapest return is the one that never happens.</p>
+  <!-- 2 · Cost -->
+  <section class="panel tray" id="cost" data-title="What a fit return costs">
+    <div class="wrap split">
+      <div class="panel-head">
+        <p class="overline">The cost of a guess</p>
+        <h2 class="display">every fit return is margin that walked back.</h2>
+        <p class="italic-line">On a small order, the chain can cost more than the margin.</p>
       </div>
-      <ul>
-        <li>Shipping — both directions, usually on you</li>
-        <li>Inspection, repackaging, and restocking labour</li>
-        <li>Stock locked in transit while the season moves on</li>
-        <li>Refund processed; payment fees not refunded</li>
+      <ul class="dash">
+        <li>Shipping both ways — usually on you</li>
+        <li>Inspection, repacking and restocking time</li>
+        <li>Stock in transit while the season moves on</li>
+        <li>Payment fees that don't come back with the refund</li>
         <li>A customer whose first impression is "their sizing is off"</li>
       </ul>
     </div>
   </section>
 
-  <section class="section" id="what">
+  <!-- 3 · Shoppers -->
+  <section class="panel" id="shoppers" data-title="What shoppers see">
     <div class="wrap">
-      <p class="eyebrow">What Alate changes</p>
-      <h2 class="section-title">Your size chart, shown at the exact moment a shopper picks a size.</h2>
-      <div class="grid">
-        <div class="card">
-          <div class="glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l4-4 4 4M7 5v14"/><path d="M21 15l-4 4-4-4M17 19V5"/></svg></div>
-          <h3>A size from your own chart</h3>
-          <p>Shoppers get a fit verdict from your actual size chart before they buy — instead of guessing, ordering two sizes, and sending one back.</p>
-        </div>
-        <div class="card">
-          <div class="glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21.2l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></div>
-          <h3>Customers who come back</h3>
-          <p>A first order that fits builds the thing money can't buy: trust in your sizing. That's what turns a one-time buyer into a repeat customer who orders without hesitating.</p>
-        </div>
-        <div class="card">
-          <div class="glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg></div>
-          <h3>An answer at the size-pick moment</h3>
-          <p>Shoppers hesitate when they can't tell whether the size or the cut will work on them. Alate reads your sizes and fit details from your product page, so a likely fit arrives at the moment they pick a size.</p>
-        </div>
-        <div class="card">
-          <div class="glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-          <h3>Fewer "will this fit me?" emails</h3>
-          <p>When the answer is already on the product — in your numbers, against their measurements — shoppers have less reason to write in and ask.</p>
-        </div>
-        <div class="card">
-          <div class="glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v6H4zM4 14h7v6H4zM15 14h5v6h-5z"/></svg></div>
-          <h3>Import, don't retype</h3>
-          <p>Paste your size chart, import it from your product descriptions, or pull it from product metafields. You review every row before it's saved.</p>
-        </div>
-        <div class="card">
-          <div class="glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5.5 8.5C7 6 9.5 5 12 5s5 1 6.5 3.5M4 13c2-3 5-4 8-4s6 1 8 4"/></svg></div>
-          <h3>Fit help without an engineering team</h3>
-          <p>One Shopify app; no engineers needed to set it up.</p>
-        </div>
-        <div class="card">
-          <div class="glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></div>
-          <h3>Sold out isn't lost</h3>
-          <p>When a shopper's size is out of stock, Alate offers to let them know when it comes back — in the app, or by email if they're signed in — re-checked against your live store. You decide which products qualify.</p>
-        </div>
-        <div class="card">
-          <div class="glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 20h10M12 4v16M12 4c-2 3-5 4-8 4 0 5 3 8 8 8s8-3 8-8c-3 0-6-1-8-4z"/></svg></div>
-          <h3>A returns story worth telling</h3>
-          <p>Every avoided return is two shipments and a pile of packaging that never happen. If your brand stands for slow fashion, that's not a footnote — it's marketing material.</p>
-        </div>
-        <div class="card">
-          <div class="glyph"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16"/></svg></div>
-          <h3>Nothing to re-host</h3>
-          <p>Catalog, price and stock are read live from Shopify, when a shopper asks. Alate only adds what Shopify doesn't hold — your size charts, fit options and model heights.</p>
+      <div class="panel-head">
+        <p class="overline">What your shoppers see</p>
+        <h2 class="display">two places the answer shows up.</h2>
+        <p class="lede">Both are built on the size data you add. Neither sends a shopper's body measurements to your store — only the size comes back.</p>
+      </div>
+      <div class="rail-wrap">
+        <div class="rail" role="region" aria-label="shopper experiences" tabindex="0">
+          <article class="card lit">
+            <span class="idx">01</span>
+            <h3>on your product page</h3>
+            <p>A "What's my size?" button — the Alate Size Finder block — appears on any product you've given a body-measurement size chart. It stays hidden on products it can't answer.</p>
+            <span class="chip tag">No app needed</span>
+          </article>
+          <article class="card lit">
+            <span class="idx">02</span>
+            <h3>enter a few measurements</h3>
+            <p>Chest, waist and hips, plus height if they like, in cm or inches. They get your size label back, a note on the fit, and a heads-up if that size is sold out — "find your size for when it's back".</p>
+            <span class="chip tag">Find my size</span>
+          </article>
+          <article class="card lit">
+            <span class="idx">03</span>
+            <h3>or use their alate profile</h3>
+            <p>Alate shoppers tap "Use my Alate profile", approve on their phone, and get the size from the profile they already have.</p>
+            <span class="chip tag">Connect with Alate</span>
+          </article>
+          <article class="card lit">
+            <span class="idx">04</span>
+            <h3>in the alate app</h3>
+            <p>Shoppers who paste your product link into Alate get a fit card built on your data: which of your sizes to order, where it sits on them, your fabric, your model's height against theirs, and whether their size is in stock.</p>
+            <span class="chip tag">Alate app</span>
+          </article>
+          <article class="card lit">
+            <span class="idx">05</span>
+            <h3>a promise on the button</h3>
+            <p>The block tells shoppers plainly: their measurements are used once, never stored, and never shared with your store.</p>
+            <span class="chip great tag"><span class="dotmark"></span>Used once</span>
+          </article>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="shoppers-see">
+  <!-- 4 · Setup -->
+  <section class="panel photo" id="setup" data-title="Setup" style="background-image:url(../assets/img/how.jpg)">
     <div class="wrap">
-      <p class="eyebrow">What your shoppers see</p>
-      <h2 class="section-title">Two places the answer shows up — your store, and their pocket.</h2>
-      <p class="section-lead">Both are built on the same size chart you upload. Neither sends a shopper's body data to your store — only the size label comes back.</p>
-      <div class="two-up">
-        <div class="card tall">
-          <div>
-            <h3>On your own product page</h3>
-            <p>A "What's my size?" button appears on any product you've given a body-measurement size chart. Shoppers enter a few measurements — chest, waist, hips, and optionally height — or tap through from their Alate profile, and get your size label back, with a note if that size is sold out. No app needed. The button tells them their measurements are used once and never shared with your store.</p>
-          </div>
-          <div class="mock" aria-hidden="true">
-            <span class="mock-btn outline">What's my size?</span>
-            <div class="mock-rows">
-              <div class="mock-row"><span>Chest</span><span>92 cm</span></div>
-              <div class="mock-row"><span>Waist</span><span>76 cm</span></div>
-              <div class="mock-row"><span>Hips</span><span>100 cm</span></div>
-            </div>
-            <div class="mock-verdict"><div><div class="big">Try a 12</div><div class="conf">Closest match on your chart</div></div></div>
-          </div>
-        </div>
-        <div class="card tall">
-          <div>
-            <h3>In the Alate app</h3>
-            <p>Shoppers paste your product link and get a verdict for their body — which of your sizes to order, where it will sit on them, your price against their budget, and whether that size is in stock right now.</p>
-          </div>
-          <div class="mock" aria-hidden="true">
-            <p class="mock-title">Everyday linen shirt</p>
-            <p class="mock-price">Your brand · ₹3,600 · <span class="chip on">$$</span></p>
-            <div class="mock-verdict"><div><div class="big">Try a L</div><div class="conf">From your size chart · model height 178 cm</div></div><span class="chip">In stock</span></div>
-            <div class="mock-rows">
-              <div class="mock-row"><span>Shoulders</span><span>Just right</span></div>
-              <div class="mock-row"><span>Length</span><span>Longer option offered</span></div>
-            </div>
-          </div>
+      <div class="panel-head">
+        <p class="overline">Setup — an afternoon, no developer</p>
+        <h2 class="display">set up in three steps.</h2>
+        <p class="lede">The app's Home page walks you through them and hides itself when you're done.</p>
+      </div>
+      <div class="rail-wrap">
+        <div class="rail" role="region" aria-label="setup steps" tabindex="0">
+          <article class="card lit">
+            <span class="idx">00</span>
+            <h3>install from your link</h3>
+            <p>We send you a private install link. It connects to your store; your theme code, checkout and catalogue stay as they are.</p>
+          </article>
+          <article class="card lit">
+            <span class="idx">01</span>
+            <h3>add your size charts</h3>
+            <p>Paste a table, or let Alate scan your product descriptions for size charts. You review every row before it's saved. One chart can cover a product, a collection or the whole shop.</p>
+          </article>
+          <article class="card lit">
+            <span class="idx">02</span>
+            <h3>tell alate who you serve</h3>
+            <p>Tick the shoppers you cut for — tall, petite, plus, wide, modest, slow fashion. It's stored with your shop, and it's how Alate matches you with shoppers whose body profile fits.</p>
+          </article>
+          <article class="card lit">
+            <span class="idx">03</span>
+            <h3>finish the products that need it</h3>
+            <p>Products shows how many are "ready for Alate shoppers". Open one to add its chart, fit offerings, model sizing and fabric.</p>
+          </article>
+          <article class="card lit">
+            <span class="idx">✓</span>
+            <h3>show the size finder</h3>
+            <p>Home checks your live theme and gives you a one-tap link into the theme editor that adds the block. Press Save, and it's live.</p>
+          </article>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="setup">
+  <!-- 5 · Control -->
+  <section class="panel tray" id="control" data-title="What you control">
     <div class="wrap">
-      <p class="eyebrow">Setup — three steps, one afternoon</p>
-      <h2 class="section-title">Install, add your fit data, done.</h2>
-      <div class="steps">
-        <div class="step">
-          <h3>Install with one link</h3>
-          <p>We send you a private install link — Alate isn't in the public Shopify App Store yet. It connects to your existing store; nothing about your theme, checkout, or catalog changes.</p>
-        </div>
-        <div class="step">
-          <h3>Add your fit data</h3>
-          <p>Import your size charts or paste them in, declare your fit offerings, add model heights. You control every number shoppers see.</p>
-        </div>
-        <div class="step">
-          <h3>Shoppers see a fit built on your data</h3>
-          <p>Any Alate shopper who pastes one of your product links gets a verdict built on your data, once your changes are saved.</p>
+      <div class="panel-head">
+        <p class="overline">What you control</p>
+        <h2 class="display">every size a shopper sees comes from you.</h2>
+      </div>
+      <div class="rail-wrap">
+        <div class="rail" role="region" aria-label="merchant controls" tabindex="0">
+          <article class="card">
+            <h3>size charts</h3>
+            <p>Body measurements per product, per collection, or one chart for the whole shop — in cm or inches.</p>
+          </article>
+          <article class="card">
+            <h3>fit offerings</h3>
+            <p>Tall and petite ranges, longer or shorter legs, extra or shorter sleeves, extended sizes, made to measure — each with the extra length, price difference, lead time and how to order.</p>
+          </article>
+          <article class="card">
+            <h3>model sizing</h3>
+            <p>Your model's height and the size they wear, per product — so Alate can say where a hem lands on someone who isn't the model's height.</p>
+          </article>
+          <article class="card">
+            <h3>fabric</h3>
+            <p>Paste the care label for the fibre composition, and say how much it stretches: none, some or lots.</p>
+          </article>
+          <article class="card">
+            <h3>restock alerts</h3>
+            <p>Tick "We won't restock this product" and Alate stops offering back-in-stock alerts on it, so nobody signs up to wait.</p>
+          </article>
+          <article class="card">
+            <h3>sizes past your range</h3>
+            <p>A 90-day count, per product, of Alate shoppers who fell outside your sizes and showed interest in a bigger or smaller one. Interest, never requests — no names, no measurements.</p>
+          </article>
+          <article class="card">
+            <h3>defaults</h3>
+            <p>The measurement unit for new charts, and a default size chart for the whole shop.</p>
+          </article>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="control">
+  <!-- 6 · Data -->
+  <section class="panel paper" id="data" data-title="Your data">
     <div class="wrap">
-      <p class="eyebrow">What you control</p>
-      <h2 class="section-title">Every size number a shopper sees comes from what you entered.</h2>
-      <ul class="controls">
-        <li><strong>Size charts</strong><span>Per product, per collection, or one chart for the whole shop. Body measurements in cm or inches.</span></li>
-        <li><strong>Fit offerings</strong><span>Tall and petite ranges, extended sizes, longer or shorter sleeves and inseams, made-to-measure — with the extra length, price difference, lead time and how to order.</span></li>
-        <li><strong>Model height</strong><span>Per product, so Alate can say where a hem lands on a shopper who isn't the model's height.</span></li>
-        <li><strong>Who you cut for</strong><span>Tell Alate you cut for tall, petite, plus, wide, modest or slow-fashion shoppers. It's stored with your shop today, and it's how we'll choose which brands to lead with when shopper discovery launches.</span></li>
-        <li><strong>Restock alerts</strong><span>Mark a product you won't restock and Alate stops offering back-in-stock notifications on it, so no new shoppers sign up to wait.</span></li>
-        <li><strong>Demand past your sizes</strong><span>When shoppers fall outside your size range, you see an anonymous count of how many wanted a bigger or smaller size, per product, over the last 90 days — no names, no measurements.</span></li>
-        <li><strong>Your data, your exit</strong><span>Uninstall any time. Your catalogue was never copied into one of ours, and the button and your charts come off your store with the app.</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="wrap">
-    <div class="trust">
-      <div>
-        <p class="lead">Your catalog lives in Shopify. Alate only adds to it.</p>
-        <p class="small">No re-hosting, no copies of your product data, no lock-in.</p>
+      <div class="panel-head">
+        <p class="overline">Your data</p>
+        <h2 class="display">your catalogue stays in shopify.</h2>
+        <p class="lede">Alate only adds what Shopify doesn't hold. Here's what it reads, keeps and never touches.</p>
       </div>
-      <ul>
-        <li>Catalog, price and inventory are read live from Shopify — not kept as a catalogue</li>
-        <li>A shopper's body measurements never reach your store — only the size label does</li>
-        <li>Nothing in your theme code, checkout or catalog is changed</li>
-        <li>Uninstall and your catalog is untouched — it was never copied into a catalogue of ours</li>
-      </ul>
+      <div class="ledger">
+        <div class="cell">
+          <h3>What it reads, live</h3>
+          <ul>
+            <li>Products, prices, options, stock, tags and descriptions — when a shopper asks, or when you import charts</li>
+            <li>Your live theme — only to check the block is on it</li>
+          </ul>
+        </div>
+        <div class="cell">
+          <h3>What it keeps</h3>
+          <ul>
+            <li>What you type in: size charts, fit offerings, model sizing, fabric, who you serve, defaults</li>
+            <li>Your store's connection, with its access token encrypted</li>
+          </ul>
+        </div>
+        <div class="cell">
+          <h3>From shoppers</h3>
+          <ul>
+            <li>Measurements typed into the block — used once to work out the size, never stored, never sent to your store</li>
+            <li>An "Alate profile" hand-off — held ten minutes at most</li>
+            <li>Sizes-past-range taps — a count with no name, deleted after 90 days</li>
+          </ul>
+        </div>
+        <div class="cell">
+          <h3>When you uninstall</h3>
+          <ul>
+            <li>The block comes off your store with the app</li>
+            <li>Your store's connection and everything you entered is deleted straight away</li>
+            <li>Shopify's 48-hour erase request clears anything left</li>
+          </ul>
+        </div>
+        <div class="cell">
+          <h3>Where it lives</h3>
+          <ul>
+            <li>Supabase (Singapore) for what Alate keeps</li>
+            <li>Vercel for the app and its API</li>
+            <li>Sentry for error reports, with headers, cookies and queries scrubbed</li>
+          </ul>
+        </div>
+        <div class="cell never">
+          <h3>Never</h3>
+          <ul>
+            <li>No copy of your catalogue, prices or stock</li>
+            <li>No Shopify customer data</li>
+            <li>No changes to your theme code, checkout or products</li>
+            <li>No cookies from the block</li>
+          </ul>
+        </div>
+      </div>
+      <p class="ledger-foot">The whole story: <a href="privacy-policy.html">Alate for Brands privacy policy</a> · <a href="support.html">support</a> · <a href="../brand-optout.html">how the Alate app reads a public product page</a></p>
     </div>
   </section>
 
-  <section class="section" id="faq">
-    <div class="wrap">
-      <p class="eyebrow">Questions brands ask</p>
-      <h2 class="section-title">The short answers.</h2>
+  <!-- 7 · FAQ -->
+  <section class="panel" id="faq" data-title="Questions">
+    <div class="wrap split">
+      <div class="panel-head">
+        <p class="overline">Questions brands ask</p>
+        <h2 class="display">the short answers.</h2>
+        <p class="lede">The full walkthrough is in the <a href="guide.html">merchant guide</a>.</p>
+      </div>
       <div class="faq">
         <details>
           <summary>Do I need a developer?</summary>
-          <p>No. You install from a link we send you, upload or import your size charts in the dashboard, and switch the "What's my size?" block on in your theme editor. Nothing in your theme code changes.</p>
-        </details>
-        <details>
-          <summary>What data leaves my store?</summary>
-          <p>Product title, price, options, stock, product type and tags, a short excerpt of the description and the product photos — read live when a shopper asks, never copied into a catalogue. Alate keeps what you type in — size charts, fit options, model heights — plus the encrypted connection to your store. When a shopper sends their size from your store to the Alate app, a short product summary is kept with that result until your store's data is erased.</p>
-        </details>
-        <details>
-          <summary>What does a shopper have to share?</summary>
-          <p>For the on-store button, a few body measurements they type in themselves — used once and discarded — or a tap-through from their Alate profile. Either way, your store only ever receives the resulting size label.</p>
+          <div><p>No. You install from a link we send you, add your charts in the app, and switch the "Alate Size Finder" block on in your theme editor. Nothing in your theme code changes.</p></div>
         </details>
         <details>
           <summary>What if my sizing is unusual?</summary>
-          <p>That's the point. Alate matches a shopper's measurements to <em>your</em> chart, not to a generic S/M/L — so a brand that runs small, or cuts for tall or petite bodies, finally gets recommended correctly.</p>
+          <div><p>That's the point. Alate matches a shopper to <em>your</em> chart, not a generic S/M/L — so a brand that runs small, or cuts for tall or petite bodies, gets answered on its own terms.</p></div>
+        </details>
+        <details>
+          <summary>What does a shopper have to share?</summary>
+          <div><p>On your store: a few measurements they type in themselves, used once and discarded — or a hand-off from their Alate profile. Your store only ever receives the size.</p></div>
+        </details>
+        <details>
+          <summary>Does the block slow my store down?</summary>
+          <div><p>It's a small theme app block that loads only on product pages and stays hidden where it can't answer. We're measuring its effect on page speed on a test store before the public listing.</p></div>
+        </details>
+        <details>
+          <summary>What does it cost?</summary>
+          <div><p>Early-access brands are set up by hand. Write to us and we'll talk it through.</p></div>
         </details>
         <details>
           <summary>What happens if I uninstall?</summary>
-          <p>The button disappears from your store and Alate stops adding to your products. Your catalog, theme and checkout were never modified, so there is nothing to undo.</p>
+          <div><p>The block disappears and what you entered is deleted. Your catalogue, theme and checkout were never modified, so there's nothing to undo.</p></div>
         </details>
       </div>
     </div>
   </section>
 
-  <section class="wrap">
-    <div class="cta-band">
-      <h2>Ready to keep more of what you sell?</h2>
-      <p>Alate for Brands is in early access. We're setting up a small group of independent brands by hand — write to us with your store's URL and we'll take it from there.</p>
-      <button class="pill" type="button" data-contact>Get early access</button>
+  <!-- 8 · Close -->
+  <section class="panel photo end" id="join" data-title="Get early access" style="background-image:url(../assets/img/privacy.jpg)">
+    <div class="wrap">
+      <p class="overline">Early access</p>
+      <h2 class="display">ready to answer "will it fit me?"</h2>
+      <p class="lede">Write to us with your store's URL and a line about your sizing — what runs small, who you cut for — and we'll set you up.</p>
+      <div class="cta-row">
+        <button class="pill" type="button" data-contact>Get early access</button>
+        <a class="pill frost" href="../">Shopping? The Alate app</a>
+      </div>
     </div>
   </section>
 </main>
 
 <footer class="foot">
   <div class="wrap">
-    <a class="wordmark" href="./"><img src="../assets/wordmark.svg" alt="alate"></a>
+    <a class="wordmark" href="./"><img src="../assets/img/wordmark-light.png" alt="alate" width="69" height="22"></a>
     <ul>
-      <li><a href="../privacy-policy.html">Privacy</a></li>
+      <li><a href="guide.html">Merchant guide</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="privacy-policy.html">Privacy</a></li>
       <li><a href="../brand-optout.html">Ask Alate not to read your store</a></li>
       <li><a href="mailto:partners@tessellate.co.in">partners@tessellate.co.in</a></li>
     </ul>
@@ -281,9 +345,9 @@
 
 <dialog class="contact" id="contact" aria-labelledby="contact-title">
   <form method="dialog">
-    <p class="eyebrow">Get early access</p>
-    <h2 id="contact-title">Write to us with your store's URL.</h2>
-    <p>We'll send you a private install link and set you up on your store. A line about your sizing — what runs small, who you cut for — helps us get you live faster.</p>
+    <p class="overline">Get early access</p>
+    <h2 id="contact-title">write to us with your store's url.</h2>
+    <p>We'll send you a private install link and set you up. A line about your sizing — what runs small, who you cut for — helps us get you live faster.</p>
     <div class="addr">
       <code data-address>partners@tessellate.co.in</code>
       <button class="pill" type="button" data-copy>Copy address</button>
@@ -295,6 +359,6 @@
   </form>
 </dialog>
 <script src="../assets/contact.js"></script>
-
+<script src="../assets/deck.js"></script>
 </body>
 </html>

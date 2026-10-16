@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alate — Brand Opt-Out</title>
+<title>Alate: brand opt-out</title>
 <meta name="description" content="Ask Alate not to read your storefront's product pages. Honoured within 24 hours, no justification needed.">
 <link rel="icon" type="image/png" href="assets/icon.png">
 <link rel="apple-touch-icon" href="assets/icon.png">
@@ -28,14 +28,14 @@
 
   <h2>How it works</h2>
   <ul>
-    <li>Alate reads a public product page only for a user who has that page's link: when they paste or share it for a fit check, or — to show them the product's name and brand before they ask for one — when they have copied it and open the app's fit-check panel. We never crawl.</li>
+    <li>Alate reads a public product page only for a user who has that page's link: when they paste or share it for a fit check, or when they have copied it and open the app's fit-check panel, so we can show them the product's name and brand before they ask for a check. We never crawl.</li>
     <li>Two follow-ups re-read a page a user already asked about, with nobody waiting on screen: if your store is too slow to read in time, we keep trying in the background for up to six hours; and if a user asked to hear when their size is back in stock, we re-check that one page about every six hours until it is back or the alert expires. Both follow the same opt-out and <code>robots.txt</code> rules as everything else.</li>
     <li>If a user shares a link from your own app (an AppsFlyer OneLink or a similar link service), we ask the link service where it points and then read your product page as above. The opt-out and <code>robots.txt</code> rules apply to your store, not to the link service.</li>
     <li>Every request names us first. The full User-Agent we send is:<br><code>Alate/1.0 (+https://tessellate.co.in/alate/brand-optout.html) Mozilla/5.0 (compatible)</code><br>When we ask an app-link service where a link points, we send <code>Alate/1.0 (+https://tessellate.co.in/alate/brand-optout.html) Mozilla/5.0 (Linux; Android 14)</code>, because those services answer differently for Android. Some stores build their product pages in the browser; for those we render the one page with a headless browser that carries the same name.</li>
     <li><strong>If your store blocks or challenges us, we stop.</strong> A refusal (HTTP 403, 429 or 503) or a bot check such as a CAPTCHA ends the read for that store: we send the shopper to your store instead and do not retry another way.</li>
-    <li>We respect <code>robots.txt</code>. To address us, use <code>User-agent: Alate</code>. If your file has no group for us, we follow your <code>*</code> group. Because our full string contains <code>Mozilla</code>, a group naming it applies to us too. If your file disallows the product's path, we stop before reading the page. If your <code>robots.txt</code> can't be fetched at all (for example, your server returns an error), we go ahead and read the page — the opt-out below doesn't depend on it.</li>
+    <li>We respect <code>robots.txt</code>. To address us, use <code>User-agent: Alate</code>. If your file has no group for us, we follow your <code>*</code> group. Because our full string contains <code>Mozilla</code>, a group naming it applies to us too. If your file disallows the product's path, we stop before reading the page. If your <code>robots.txt</code> can't be fetched at all (for example, your server returns an error), we go ahead and read the page. The opt-out below works either way.</li>
     <li>We do not redistribute scraped data. Product information is shown only to the user who requested it, alongside a "View on Store" link back to your storefront.</li>
-    <li>If you want to opt out anyway — no justification required — send us the request below and we'll honour it within 24 hours.</li>
+    <li>If you want to opt out anyway, you don't need to give a reason. Send us the request below and we'll honour it within 24 hours.</li>
   </ul>
 
   <h2>Request removal</h2>
@@ -50,11 +50,11 @@
   </div>
 
   <div class="callout dark">
-    <p><strong>What happens next</strong>We add your origin to our blocklist within 24 hours. From then on we read nothing from your store — no fit check, no name for a copied link, no background retry and no restock re-check. Any user who pastes a URL from your store will see a card saying the brand has asked not to be scraped and to visit your store directly, instead of a fit analysis. Users can still reach you by tapping through to your storefront.</p>
+    <p><strong>What happens next</strong>We add your origin to our blocklist within 24 hours. From then on we read nothing from your store: no fit check, no name for a copied link, no background retry and no restock re-check. Any user who pastes a URL from your store will see a card saying the brand has asked not to be scraped and to visit your store directly, instead of a fit analysis. Users can still reach you by tapping through to your storefront.</p>
   </div>
 
   <h2>Partnership alternative</h2>
-  <p>If you'd rather integrate with Alate — sharing your size charts and fit data through a consented partnership so your customers get accurate fit predictions — we'd love to talk.</p>
+  <p>If you'd rather work with Alate and share your size charts and fit data so your customers get better fit predictions, we'd love to talk. <a href="brands/">Alate for Brands</a> is how that works on Shopify.</p>
   <div class="callout">
     <p><strong>Partnerships</strong><a href="mailto:partners@tessellate.co.in?subject=Alate%20Partnership%20Inquiry">partners@tessellate.co.in</a></p>
   </div>

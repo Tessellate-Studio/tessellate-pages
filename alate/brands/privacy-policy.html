@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alate for Brands — Privacy Policy</title>
+<meta name="description" content="What the Alate for Brands Shopify app and the Alate Size Finder block read, keep and delete — for merchants and their shoppers.">
+<meta name="theme-color" content="#efedf1">
+<link rel="icon" type="image/png" href="../assets/icon.png">
+<link rel="apple-touch-icon" href="../assets/icon.png">
+<link rel="stylesheet" href="../assets/alate.css">
+</head>
+<body class="docs">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="wordmark" href="./" aria-label="Alate for Brands"><img src="../assets/img/wordmark-dark.png" alt="alate" width="94" height="30"></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="guide.html">Guide</a>
+      <a href="support.html">Support</a>
+      <a class="hide-sm" href="privacy-policy.html" aria-current="page">Privacy</a>
+    </nav>
+  </div>
+</header>
+
+<main class="doc" id="main">
+  <h1>Alate for Brands Privacy Policy</h1>
+  <p class="date">Effective October 16, 2026</p>
+
+  <p>This policy covers <strong>Alate for Brands</strong>, a Shopify app published by <strong>Tessellate Studio</strong> ("we", "us"), and the <strong>Alate Size Finder</strong> block it adds to a merchant's product pages. It explains what we read from a Shopify store, what we keep, what happens to a shopper's measurements, and how everything is deleted. The Alate shopping app has its own <a href="../privacy-policy.html">privacy policy</a>.</p>
+
+  <div class="callout dark">
+    <p><strong>In short</strong>We read your catalogue live from Shopify and keep no copy of it. We keep what you type into the app — size charts, fit offerings, model sizing, fabric and settings — and your store's connection, with its access token encrypted. A shopper's measurements typed into the size finder are used once to work out a size, are not stored, and never reach your store. We hold no Shopify customer data. Uninstall, and what you entered is deleted straight away.</p>
+  </div>
+
+  <h2>1. Merchants: what we collect</h2>
+  <h3>a) Your store's connection</h3>
+  <p>When you install, Shopify gives us your shop's domain, an access token, the permissions you granted, your store's primary domain and a token for reading your public storefront. We store these with the date you installed. The Admin access token is encrypted (AES-256-GCM) before it is stored, and tokens refresh automatically when they expire.</p>
+  <h3>b) What you enter</h3>
+  <ul>
+    <li>Size charts — name, sizes, measurements, unit, and which product, collection or shop they apply to</li>
+    <li>Fit offerings — the type (for example tall range or made to measure), extra length, price difference, lead time and how to order</li>
+    <li>Per-product sizing — model height, the size the model wears, notes, fibre composition, stretch, and whether you won't restock the product</li>
+    <li>Settings — the shoppers you serve, your default unit and your shop default size chart</li>
+  </ul>
+  <h3>c) What we read from Shopify but do not keep</h3>
+  <p>Product titles, prices, options, stock, product types, tags, descriptions and photos are read from Shopify when they're needed — when a shopper asks for a size, when you open your products in the app, or when you import size charts from your product descriptions — and are not kept as a catalogue. We also read your live theme, only to check whether the size finder block is on it.</p>
+  <h3>d) Who you are</h3>
+  <p>The app runs inside your Shopify admin and does not ask for your name or keep a separate account for you. If you email us, we keep that correspondence to answer you.</p>
+
+  <h2>2. Shopify permissions and why</h2>
+  <table>
+    <thead><tr><th>Permission</th><th>Why we need it</th></tr></thead>
+    <tbody>
+      <tr><td><code>read_products</code></td><td>List your products in the app; import size charts from product descriptions</td></tr>
+      <tr><td><code>read_product_listings</code></td><td>Read the products published to your store</td></tr>
+      <tr><td><code>read_inventory</code></td><td>Show shoppers whether a size is in stock</td></tr>
+      <tr><td><code>read_themes</code></td><td>Check whether the size finder block is on your live theme</td></tr>
+      <tr><td><code>unauthenticated_read_product_listings</code>, <code>unauthenticated_read_product_inventory</code>, <code>unauthenticated_read_product_tags</code></td><td>Read a product's public details, stock and tags through the Storefront API when a shopper asks</td></tr>
+    </tbody>
+  </table>
+  <p>Every permission is read-only. We do not ask for orders, customers, or anything that writes to your store.</p>
+
+  <h2>3. Shoppers: the Alate Size Finder</h2>
+  <h3>a) Measurements typed into the block</h3>
+  <p>A shopper may type their chest, waist and hips — and, optionally, their height — into the block on your product page. These, with the product being viewed, are sent over HTTPS to Alate's server, used once to work out the size from your chart, and then discarded. They are not stored, not linked to the shopper, and not sent to your store. Your store receives only the resulting size and fit note, shown in the shopper's browser.</p>
+  <h3>b) "Use my Alate profile"</h3>
+  <p>A shopper who uses the Alate app can connect it to the block instead of typing. We create a short-lived hand-off record — a random token, your shop, the product and the result — so their phone and the product page can meet. It expires after ten minutes. The shopper's profile itself stays in the Alate app and is handled under the <a href="../privacy-policy.html">Alate privacy policy</a>.</p>
+  <h3>c) Sizes past your range</h3>
+  <p>When an Alate shopper falls outside your size range and taps to say they'd want a bigger or smaller size, we record the product, the direction and a scrambled per-install code (so one person counts once). No size, measurement, name, email or account is kept. These records are deleted after 90 days, and you see only counts.</p>
+  <h3>d) No cookies, no customer data</h3>
+  <p>The block sets no cookies and stores nothing in the shopper's browser. We hold no Shopify customer data; Shopify's customer data and customer erasure requests are answered accordingly.</p>
+
+  <h2>4. How we use data</h2>
+  <ul>
+    <li>To answer shoppers' size questions from your data, on your product pages and in the Alate app</li>
+    <li>To show you your products, charts and the sizes-past-range counts</li>
+    <li>To keep the service secure and working (error reports — section 5)</li>
+  </ul>
+  <p>We do not sell data, do not use it for advertising, and do not share your sizing data with other merchants.</p>
+
+  <h2>5. Service providers</h2>
+  <ul>
+    <li><strong>Shopify</strong> — the platform the app runs on. <a href="https://www.shopify.com/legal/privacy">Privacy Policy</a></li>
+    <li><strong>Supabase</strong> — our database, hosted in Singapore (ap-southeast-1). It holds the data in sections 1a, 1b and 3b–3c. <a href="https://supabase.com/privacy">Privacy Policy</a></li>
+    <li><strong>Vercel</strong> — hosts the app and its API; requests may be processed in the United States. <a href="https://vercel.com/legal/privacy-policy">Privacy Policy</a></li>
+    <li><strong>Sentry</strong> — error reports from our API, with request headers, cookies and query strings removed before they are sent. <a href="https://sentry.io/privacy/">Privacy Policy</a></li>
+  </ul>
+
+  <h2>6. Retention and deletion</h2>
+  <table>
+    <thead><tr><th>Data</th><th>Kept until</th></tr></thead>
+    <tbody>
+      <tr><td>Store connection and everything you entered</td><td>You uninstall — deleted at once, when Shopify tells us the app was uninstalled</td></tr>
+      <tr><td>Anything left after uninstall</td><td>Erased when Shopify sends its shop erasure request, 48 hours after uninstall (skipped if you've reinstalled)</td></tr>
+      <tr><td>Size finder measurements</td><td>Not kept — used for one answer</td></tr>
+      <tr><td>"Use my Alate profile" hand-off</td><td>Ten minutes</td></tr>
+      <tr><td>Sizes-past-range taps</td><td>90 days</td></tr>
+      <tr><td>Error reports</td><td>Sentry's retention for our plan</td></tr>
+    </tbody>
+  </table>
+
+  <h2>7. Security</h2>
+  <ul>
+    <li>All traffic uses HTTPS / TLS. Every Shopify webhook is verified by its signature.</li>
+    <li>Admin access tokens are encrypted at rest with AES-256-GCM.</li>
+  </ul>
+
+  <h2>8. Your rights</h2>
+  <p>Merchants and shoppers can ask for access to, correction of, or deletion of personal data we hold, and EEA/UK residents can object or withdraw consent. Email <a href="mailto:privacy@tessellate.co.in">privacy@tessellate.co.in</a>; we respond within 30 days (within 15 days for grievances under India's DPDP Act). Because size finder measurements are not stored, there is nothing of a shopper's to retrieve or delete from a size-finder answer.</p>
+  <p><strong>Legal basis (GDPR):</strong> performing our contract with you as a merchant (sections 1–2); legitimate interest in answering a size question a shopper asked for (section 3a–3b) and in showing anonymous demand (section 3c). <strong>Cross-border transfers:</strong> data may be processed outside the EEA/UK by the providers in section 5, under their standard contractual clauses.</p>
+
+  <h2>9. Changes to this policy</h2>
+  <p>Every change is posted on this page with a new effective date. If a change materially affects how we handle your data, we'll tell installed merchants before it takes effect.</p>
+
+  <h2>10. Contact</h2>
+  <p><strong>Publisher:</strong> Tessellate Studio (sole proprietorship, India)</p>
+  <p><strong>Privacy and grievances:</strong> <a href="mailto:privacy@tessellate.co.in">privacy@tessellate.co.in</a></p>
+  <p><strong>Support:</strong> <a href="mailto:partners@tessellate.co.in">partners@tessellate.co.in</a></p>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <a class="wordmark" href="./"><img src="../assets/img/wordmark-dark.png" alt="alate" width="69" height="22"></a>
+    <ul>
+      <li><a href="./">Alate for Brands</a></li>
+      <li><a href="guide.html">Merchant guide</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="../privacy-policy.html">Alate app privacy</a></li>
+    </ul>
+    <p class="copy">© 2026 Tessellate Studio</p>
+  </div>
+</footer>
+</body>
+</html>

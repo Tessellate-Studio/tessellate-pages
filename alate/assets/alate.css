@@ -126,7 +126,10 @@ img { max-width: 100%; }
 /* ---------- Top bar ---------- */
 .nav {
   position: fixed; inset: 0 0 auto 0; z-index: 50;
-  background: linear-gradient(to bottom, rgba(18, 15, 22, 0.86), rgba(18, 15, 22, 0));
+  /* A solid frosted bar, so text scrolling up behind it never shows through. */
+  background: rgba(26, 22, 32, 0.92);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--hair);
 }
 .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 16px; }
 .wordmark { display: inline-block; line-height: 0; text-decoration: none; }
@@ -137,7 +140,7 @@ img { max-width: 100%; }
 .nav-links .pill { padding: 9px 18px; font-size: 14px; }
 @media (max-width: 720px) { .nav-links .hide-sm { display: none; } }
 .nav { transition: background 200ms ease; }
-.nav.on-paper { background: linear-gradient(to bottom, rgba(239, 237, 241, 0.94), rgba(239, 237, 241, 0)); }
+.nav.on-paper { background: rgba(239, 237, 241, 0.94); border-bottom-color: var(--line); }
 .nav.on-paper .wordmark img { filter: brightness(0.19); }
 .nav.on-paper .nav-links a:not(.pill) { color: var(--ink-muted); }
 .nav.on-paper .nav-links a:not(.pill):hover { color: var(--ink-strong); }
@@ -283,8 +286,10 @@ img { max-width: 100%; }
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
 @media (max-width: 860px) { .split { grid-template-columns: 1fr; gap: 28px; } }
 .dash { display: grid; gap: 14px; }
+/* Bullets are small lilac dots with a soft ring, like the app's selected chips. */
 .dash li { position: relative; padding-left: 26px; color: var(--on-2); }
-.dash li::before { content: ''; position: absolute; left: 0; top: 0.8em; width: 14px; height: 1px; background: var(--lilac-3); }
+.dash li::before { content: ''; position: absolute; left: 3px; top: 0.62em; width: 7px; height: 7px; border-radius: 50%; background: var(--lilac); box-shadow: 0 0 0 3px rgba(233, 220, 240, 0.16); }
+.paper .dash li::before { background: var(--plum); box-shadow: 0 0 0 3px rgba(96, 78, 110, 0.14); }
 .paper .dash li { color: var(--ink); }
 
 /* Data ledger: what's needed / read / kept / never */

@@ -126,10 +126,10 @@ img { max-width: 100%; }
 /* ---------- Top bar ---------- */
 .nav {
   position: fixed; inset: 0 0 auto 0; z-index: 50;
-  /* A solid frosted bar, so text scrolling up behind it never shows through. */
-  background: rgba(26, 22, 32, 0.92);
-  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--hair);
+  /* Translucent frosted glass: the page shows through as colour, but the
+     heavy blur keeps text scrolling behind it from reading through. */
+  background: rgba(26, 22, 32, 0.55);
+  backdrop-filter: blur(28px) saturate(140%); -webkit-backdrop-filter: blur(28px) saturate(140%);
 }
 .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 16px; }
 .wordmark { display: inline-block; line-height: 0; text-decoration: none; }
@@ -140,7 +140,7 @@ img { max-width: 100%; }
 .nav-links .pill { padding: 9px 18px; font-size: 14px; }
 @media (max-width: 720px) { .nav-links .hide-sm { display: none; } }
 .nav { transition: background 200ms ease; }
-.nav.on-paper { background: rgba(239, 237, 241, 0.94); border-bottom-color: var(--line); }
+.nav.on-paper { background: rgba(239, 237, 241, 0.6); }
 .nav.on-paper .wordmark img { filter: brightness(0.19); }
 .nav.on-paper .nav-links a:not(.pill) { color: var(--ink-muted); }
 .nav.on-paper .nav-links a:not(.pill):hover { color: var(--ink-strong); }
@@ -359,7 +359,7 @@ dialog.contact .row a { color: var(--on-2); font-size: 14px; }
    pages — paper ground, plum ink, same faces. */
 body.docs { background: var(--paper); color: var(--ink); }
 html:has(body.docs) { background: var(--paper); }
-body.docs .nav { position: sticky; top: 0; background: rgba(239, 237, 241, 0.9); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+body.docs .nav { position: sticky; top: 0; background: rgba(239, 237, 241, 0.6); backdrop-filter: blur(28px) saturate(140%); -webkit-backdrop-filter: blur(28px) saturate(140%); }
 body.docs .nav-links a:not(.pill) { color: var(--ink-muted); }
 body.docs .nav-links a:not(.pill):hover, body.docs .nav-links a[aria-current="page"] { color: var(--ink-strong); }
 body.docs .pill { background: var(--ink-strong); color: #fff; }

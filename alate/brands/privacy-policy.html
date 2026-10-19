@@ -26,7 +26,7 @@
 
 <main class="doc" id="main">
   <h1>Alate for Brands Privacy Policy</h1>
-  <p class="date">Effective October 16, 2026</p>
+  <p class="date">Effective October 19, 2026</p>
 
   <p>This policy covers <strong>Alate for Brands</strong>, a Shopify app published by <strong>Tessellate Studio</strong> ("we", "us"), and the <strong>Alate Size Finder</strong> block it adds to a merchant's product pages. It explains what we read from a Shopify store, what we keep, what happens to a shopper's measurements, and how everything is deleted. The Alate shopping app has its own <a href="../privacy-policy.html">privacy policy</a>.</p>
 
@@ -43,9 +43,10 @@
     <li>Fit offerings: the type (for example a tall range or made to measure), extra length, price difference, lead time and how to order</li>
     <li>Sizing for each product: model height, the size the model wears, notes, fibre content, stretch, and whether you've said you won't restock it</li>
     <li>Settings: the shoppers you serve, your default unit and your shop's default size chart</li>
+    <li>Suggestions from your listing: values the app suggests from a product's own listing, such as model sizing or a size range, each with a short snippet (up to 200 characters) of the listing text that supports it, and whether you accepted or dismissed it. Nothing is applied unless you accept it</li>
   </ul>
   <h3>c) What we read from Shopify but do not keep</h3>
-  <p>Product titles, prices, options, stock, product types, tags, descriptions and photos are read from Shopify when they're needed, for example when a shopper asks for a size, when you open your products in the app, or when you import size charts from your product descriptions. We don't keep them as a catalogue. We also read your live theme, only to check whether the size finder block is on it.</p>
+  <p>Product titles, prices, options, stock, product types, tags, descriptions and photos are read from Shopify when they're needed, for example when a shopper asks for a size, when you open your products in the app, or when you import size charts from your product descriptions. We don't keep them as a catalogue. We also read your products' category details (such as size type and fabric), only to suggest values for you to accept or dismiss, and your live theme, only to check whether the size finder block is on it.</p>
   <h3>d) Who you are</h3>
   <p>The app runs inside your Shopify admin and does not ask for your name or keep a separate account for you. If you email us, we keep that correspondence to answer you.</p>
 
@@ -57,6 +58,7 @@
       <tr><td><code>read_product_listings</code></td><td>Read the products published to your store</td></tr>
       <tr><td><code>read_inventory</code></td><td>Show shoppers whether a size is in stock</td></tr>
       <tr><td><code>read_themes</code></td><td>Check whether the size finder block is on your live theme</td></tr>
+      <tr><td><code>read_metaobjects</code></td><td>Read the labels of your products' category details (such as size type and fabric), so the app can suggest sizing from your listing</td></tr>
       <tr><td><code>unauthenticated_read_product_listings</code>, <code>unauthenticated_read_product_inventory</code>, <code>unauthenticated_read_product_tags</code></td><td>Read a product's public details, stock and tags through the Storefront API when a shopper asks</td></tr>
     </tbody>
   </table>
@@ -92,7 +94,7 @@
   <table>
     <thead><tr><th>Data</th><th>Kept until</th></tr></thead>
     <tbody>
-      <tr><td>Store connection and everything you entered</td><td>You uninstall. It's deleted as soon as Shopify tells us the app was uninstalled</td></tr>
+      <tr><td>Store connection, suggestions from your listing and everything you entered</td><td>You uninstall. It's deleted as soon as Shopify tells us the app was uninstalled</td></tr>
       <tr><td>Anything left after uninstall</td><td>Erased when Shopify sends its shop erasure request, 48 hours after uninstall (skipped if you've reinstalled)</td></tr>
       <tr><td>Size finder measurements</td><td>Not kept. Used for one answer only</td></tr>
       <tr><td>"Use my Alate profile" hand-off</td><td>Ten minutes</td></tr>

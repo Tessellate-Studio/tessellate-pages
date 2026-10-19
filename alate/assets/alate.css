@@ -378,6 +378,9 @@ body.docs :focus-visible { outline-color: var(--plum); }
 
 .doc { max-width: 860px; margin: 0 auto; padding: 48px var(--gutter) 72px; }
 .doc > h1 { font-family: var(--display); font-weight: 200; text-transform: lowercase; color: var(--ink-strong); font-size: clamp(38px, 5.4vw, 56px); line-height: 1.06; margin: 0 0 10px; text-wrap: balance; }
+/* A heading that carries a proper name (the app's own name on its privacy policy)
+   keeps its capitals; every other page heading stays in the lowercase house style. */
+.doc > h1.keep-case { text-transform: none; }
 .doc .date { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); margin: 0 0 28px; }
 .doc h1 + p:not(.date) { margin-top: 24px; }
 .doc h2 { font-family: var(--display); font-weight: 200; text-transform: lowercase; color: var(--ink-strong); font-size: clamp(28px, 3.4vw, 36px); line-height: 1.12; margin: 52px 0 12px; scroll-margin-top: 84px; }

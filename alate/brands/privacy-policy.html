@@ -24,9 +24,16 @@
   </div>
 </header>
 
+<section class="doc-hero" style="background-image:url(../assets/img/privacy.jpg)">
+  <div class="wrap">
+    <p class="overline">Alate for Brands · privacy policy</p>
+    <h1>what we read, keep and delete.</h1>
+    <p class="italic-line">For merchants who install the app, and the shoppers who use the size finder.</p>
+    <p class="date">Effective October 20, 2026</p>
+  </div>
+</section>
+
 <main class="doc" id="main">
-  <h1 class="keep-case">Alate for Brands Privacy Policy</h1>
-  <p class="date">Effective October 19, 2026</p>
 
   <p>This policy covers <strong>Alate for Brands</strong>, a Shopify app published by <strong>Tessellate Studio</strong> ("we", "us"), and the <strong>Alate Size Finder</strong> block it adds to a merchant's product pages. It explains what we read from a Shopify store, what we keep, what happens to a shopper's measurements, and how everything is deleted. The Alate shopping app has its own <a href="../privacy-policy.html">privacy policy</a>.</p>
 
@@ -55,11 +62,9 @@
     <thead><tr><th>Permission</th><th>Why we need it</th></tr></thead>
     <tbody>
       <tr><td><code>read_products</code></td><td>List your products in the app; import size charts from product descriptions</td></tr>
-      <tr><td><code>read_product_listings</code></td><td>Read the products published to your store</td></tr>
-      <tr><td><code>read_inventory</code></td><td>Show shoppers whether a size is in stock</td></tr>
       <tr><td><code>read_themes</code></td><td>Check whether the size finder block is on your live theme</td></tr>
       <tr><td><code>read_metaobjects</code></td><td>Read the labels of your products' category details (such as size type and fabric), so the app can suggest sizing from your listing</td></tr>
-      <tr><td><code>unauthenticated_read_product_listings</code>, <code>unauthenticated_read_product_inventory</code>, <code>unauthenticated_read_product_tags</code></td><td>Read a product's public details, stock and tags through the Storefront API when a shopper asks</td></tr>
+      <tr><td><code>unauthenticated_read_product_listings</code>, <code>unauthenticated_read_product_tags</code></td><td>Read a product's public details, whether a size is available, and tags through the Storefront API when a shopper asks</td></tr>
     </tbody>
   </table>
   <p>Every permission is read-only. We do not ask for orders, customers, or anything that writes to your store.</p>
@@ -87,7 +92,7 @@
     <li><strong>Shopify</strong>, the platform the app runs on. <a href="https://www.shopify.com/legal/privacy">Privacy Policy</a></li>
     <li><strong>Supabase</strong>, our database, hosted in Singapore (ap-southeast-1). It holds the data described in sections 1a, 1b, 3b and 3c. <a href="https://supabase.com/privacy">Privacy Policy</a></li>
     <li><strong>Vercel</strong>, which hosts the app and its API. Requests may be processed in the United States. <a href="https://vercel.com/legal/privacy-policy">Privacy Policy</a></li>
-    <li><strong>Sentry</strong>, which receives error reports from our API. Request headers, cookies and query strings are removed before they're sent. <a href="https://sentry.io/privacy/">Privacy Policy</a></li>
+    <li><strong>Sentry</strong>, which receives error reports from our API and from the app's pages in your Shopify admin. Shopify's session token, cookies and authorization headers are removed before they're sent. <a href="https://sentry.io/privacy/">Privacy Policy</a></li>
   </ul>
 
   <h2>6. Retention and deletion</h2>

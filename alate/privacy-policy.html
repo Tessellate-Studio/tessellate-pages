@@ -25,7 +25,7 @@
 
 <main class="doc">
   <h1>Privacy Policy</h1>
-  <p class="date">Effective October 19, 2026</p>
+  <p class="date">Effective November 16, 2026</p>
 
   <p>Alate ("we", "our", "the app") is a mobile application developed by <strong>Tessellate Studio</strong> that helps you predict whether clothing items will fit based on your body profile. This policy explains what data we collect, how we use it, and your rights.</p>
 
@@ -113,6 +113,7 @@
   <p>We use the following service providers strictly to operate the app. Your body profile is processed by our own backend (hosted on Vercel) transiently to compute a fit check, and, only if you sign in, stored in our database (hosted on Supabase) for sync. No other provider below receives your body profile data.</p>
   <ul>
     <li><strong>Vercel</strong>: hosts our backend API that processes product-read and fit-check requests. Your body profile is sent here transiently to compute a fit check and is immediately discarded; it is not stored. See section 1a. <a href="https://vercel.com/legal/privacy-policy">Privacy Policy</a></li>
+    <li><strong>Upstash</strong>: keeps our rate-limit counters, so our servers count requests together instead of each on its own. A counter holds a one-way scrambled code made from your random app identifier (section 1d), or from the network address when there is none, and a number of requests. It is never your name, email, account, body profile or a product link, and it is deleted after one minute. <a href="https://upstash.com/trust/privacy">Privacy Policy</a></li>
     <li><strong>Supabase</strong>: hosts the brand opt-out registry, the brand-request demand log, restock alerts and push tokens (sections 1j and 1k), shared measurement snapshots (section 1h), links to slow stores still being read (section 1b), size-range taps (section 1l), Advanced features requests (section 1n), see-through answers and photo estimates (section 1p), length and sleeve answers (section 1q), authentication, and, only if you sign in, the synced copy of your body profile, measurements, calibration, fit history and bought pieces (section 1e). <a href="https://supabase.com/privacy">Privacy Policy</a></li>
     <li><strong>Google Gemini</strong>: used server-side, on paid API terms that do not train on what we send, to (a) enrich product descriptions when the source site lacks structured data (only public product text is sent, never body profile), (b) read a measurement-sheet photo once if you use that feature (see section 1i), and (c) read a product's public photo to name its colours and estimate how see-through the fabric is (section 1p). The photo is the store's public product image, never a photo of you. <a href="https://ai.google.dev/gemini-api/terms">Gemini API Terms</a> · <a href="https://policies.google.com/privacy">Privacy Policy</a></li>
     <li><strong>OpenAI</strong>: used server-side, on API terms that do not train on what we send, as the fallback when Gemini is unavailable, for the same three purposes. <a href="https://openai.com/policies/privacy-policy">Privacy Policy</a></li>
@@ -141,7 +142,7 @@
     <li><strong>Synced account data</strong> (body profile, measurements, budget range, calibration, fit history, bought pieces) is retained until you delete your account, then permanently deleted within 30 days.</li>
     <li><strong>Crash reports</strong> are retained for 90 days.</li>
     <li><strong>Usage statistics</strong> (section 1m) are kept for at most 13 months. Because they carry only a random identifier that is replaced when you sign out, we cannot find past records to delete them individually; they are deleted when that period ends.</li>
-    <li><strong>Rate-limit counters</strong> reset every minute and are not persisted.</li>
+    <li><strong>Rate-limit counters</strong> reset every minute and are deleted after one minute (Upstash, section 4). They hold a scrambled code, never the identifier itself.</li>
     <li><strong>Clipboard link lookups</strong> (section 1b) are not retained: the link and the answer are discarded as soon as the answer is sent.</li>
     <li><strong>Brand opt-out entries</strong> are retained indefinitely so the opt-out persists across deployments.</li>
     <li><strong>Brand request entries</strong> (URL + brand domain) are retained indefinitely as demand signal, not linked to your account. Optional notify-me email addresses are deleted within 30 days of the notification being sent, or upon your request, whichever is sooner. Until the notification is sent, the email is kept so that we can send it, but never for more than 90 days after your request. If we haven't been able to send it by then, the email is deleted and the brand entry stays as demand signal, not linked to you.</li>

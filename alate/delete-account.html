@@ -26,7 +26,7 @@
 <main class="doc">
   <h1>Delete Your Data</h1>
 
-  <p class="lead">When you're not signed in, almost everything Alate knows about you is stored on your device, and you can delete it from within the app. If you signed in with Google (optional), a synced copy lives in your account, and you can delete the account from the app too.</p>
+  <p class="lead">When you're not signed in, almost everything Alate knows about you is stored on your device, and you can delete it from within the app. If you signed in with Google or Apple (optional), a synced copy lives in your account, and you can delete the account from the app too.</p>
 
   <h2>What's stored where</h2>
   <ul>
@@ -36,7 +36,8 @@
     <li><strong>Fit-calibration garments and budget range</strong>: on your device. If you're signed in, also in your account.</li>
     <li><strong>Age-gate confirmation and privacy-policy agreement</strong>: on your device only.</li>
     <li><strong>Device identifier</strong> (a random ID made on install): on your device; the server stores it only with the things listed in section 1d of the <a href="privacy-policy.html">privacy policy</a>.</li>
-    <li><strong>Google account info</strong> (email + name, only if you signed in): stored via Supabase Auth server-side.</li>
+    <li><strong>Google or Apple account info</strong> (email + name, only if you signed in; with Apple's Hide My Email, a private relay address): stored via Supabase Auth server-side.</li>
+    <li><strong>Apple sign-in token</strong> (only if you signed in with Apple): stored on our server, never on your phone, only so we can tell Apple to remove Alate from your Sign in with Apple list when you delete your account.</li>
     <li><strong>Brand-request notify email</strong> (only if you were signed in and tapped "notify me when added"): stored server-side until the notification is sent, then deleted within 30 days. If we haven't been able to send it, it is deleted 90 days after you asked.</li>
     <li><strong>Restock-alert entries</strong> (product URL, size and device identifier, plus your email and account id if you were signed in): your email and identifiers are removed once the notification is sent, the alert expires, or the moment you unsubscribe; the brand, product link and size stay only as demand data.</li>
     <li><strong>Advanced features request</strong> (only if you asked for one: the email you gave, device identifier, and your account id once linked, which happens when you asked while signed in or later sign in with that address): stored server-side until you delete your account or ask us to delete it.</li>
@@ -74,7 +75,8 @@
   <h2>What deleting your account removes</h2>
   <p>Deleting the account removes the Supabase Auth record and every synced row (profile, measurements, budget, calibration, fit history and bought pieces), along with your push tokens and any Advanced features request. Your email and account id are removed from any restock alert or brand notify request. This happens straight away, and always within 30 days.</p>
   <p>Deleting the account in the app also signs you out and clears your profile, fit history, pieces and budget from that phone.</p>
-  <p>No longer have the app? Email us instead and include the email address associated with your Google sign-in:</p>
+  <p>If you signed in with Apple, deleting the account also tells Apple to remove Alate from your Sign in with Apple list, and deletes the stored token. If Alate still shows under your Apple ID in Settings, you can remove it there.</p>
+  <p>No longer have the app? Email us instead and include the email address you signed in with (if you chose Apple's Hide My Email, say so and we will work out the account with you):</p>
   <div class="callout">
     <p><strong>Email</strong><a href="mailto:privacy@tessellate.co.in?subject=Account%20Deletion%20Request%20-%20Alate">privacy@tessellate.co.in</a></p>
   </div>
